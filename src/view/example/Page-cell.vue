@@ -1,19 +1,21 @@
 <template>
 <div class="page">
-    <m-header title="mui" fixed></m-header>
+    <m-header title="Cell" fixed>
+        <router-link to='List' slot="left" tag="span">
+            <i class="iconfont">&#xe8b5;</i>
+            <span class="m-header-left-text">返回</span>
+        </router-link>
+    </m-header>
     <div class="content">
-        <div class="content-padded">css基础组件</div>
-        <m-cell title="Button" name="Button" icon></m-cell>
-        <m-cell title="Badge" name="Badge" icon>
+        <m-cell title="button" icon></m-cell>
+        <m-cell title="badge" icon>
             <m-badge type="danger" size="small" slot="badge">12</m-badge>
         </m-cell>
-        <m-cell title="Cell" name="Cell" value="带 icon">
+        <m-cell title="cell" value="带 icon">
             <i class="icon iconfont" slot="icon">&#xe86d;</i>
         </m-cell>
-        <m-cell title="Header" name="Header" icon></m-cell>
          <m-cell title="标题文字" value="带图片" icon>
              <img src="../../assets/logo.png" slot="icon" />
-             <m-badge></m-badge>
         </m-cell>
 
     </div>

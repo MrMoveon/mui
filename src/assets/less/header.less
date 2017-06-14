@@ -1,0 +1,68 @@
+.@{name}header{
+    position: relative;
+    height: @header-height;
+    overflow: hidden;
+    color: #fff;
+    background-color:@color-primary; 
+    padding:0px 10px;
+    //.hairline(bottom,@color-split);
+    
+   &.is-fixed{
+       position: fixed;
+       left: 0;
+       right: 0;
+       top: 0;
+       z-index: 9;
+   }
+}
+.@{name}header-title{
+    position: absolute;
+    left: 80px;
+    right: 80px;
+    top: 0;
+    font-size: 16px;
+    text-align: center;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    padding:0 10px;
+    height: @header-height;
+    line-height: @header-height+2;
+}
+.@{name}header-left{
+    float: left;
+    line-height: @header-height;
+    a,span{
+        
+        font-size: 14px;
+        &:active{
+            opacity: 0.5;
+        }
+    }
+    &-text{
+        display: inline-block;
+        line-height: @header-height+2;
+    }
+    .iconfont{
+        float: left;
+        font-size: 16px;
+
+    }
+}
+.@{name}header-right{
+    float: right;
+    line-height: @header-height;
+    a,span{
+        font-size: 14px;
+        &:active{
+            opacity: 0.5;
+        }
+    }
+    .iconfont{
+        font-size: 16px;
+        margin-left: 10px;
+        &:active{
+            opacity: 0.5;
+        }
+    }
+}
