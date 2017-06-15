@@ -7,15 +7,11 @@
         <m-cell title="Badge" name="Badge" icon>
             <m-badge type="danger" size="small" slot="badge">12</m-badge>
         </m-cell>
-        <m-cell title="Cell" name="Cell" value="带 icon">
-            <i class="icon iconfont" slot="icon">&#xe86d;</i>
+        <m-cell title="Cell" name="Cell" icon value="带 icon">
+            <i class="icon iconfont" slot="icon">&#xe6ec;</i>
         </m-cell>
         <m-cell title="Header" name="Header" icon></m-cell>
-         <m-cell title="标题文字" value="带图片" icon>
-             <img src="../../assets/logo.png" slot="icon" />
-             <m-badge></m-badge>
-        </m-cell>
-
+        
     </div>
     
 </div>  

@@ -9,7 +9,7 @@
    <div class="m-cell-value">
      {{value}}
      <slot name="badge"></slot>
-     <i v-if="icon" class="icon iconfont">&#xe88e;</i></div>
+     <i v-if="icon" class="icon iconfont">&#xe6fb;</i></div>
   <!--</a>-->
   </router-link>
 </template>
