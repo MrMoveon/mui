@@ -9,6 +9,7 @@
     <div class="content">
         <div class="content-padded">普通按钮</div>
         <div class="content-padded">
+            <m-button>按钮</m-button>
             <m-button type="primary">按钮</m-button>
             <m-button type="danger">按钮</m-button>
             <m-button type="warning">按钮</m-button>
