@@ -5,8 +5,23 @@
 </template>
 
 <script>
+/**
+ * m-button
+ * @desc 按钮
+ * @param {(type|number)} [type=default] - 显示类型，传入类型名，可选 `primary`,`danger`,`warning`, `success`
+ * @param {string} size - 尺寸，可选 `noraml`,`large`
+ * @param {string} color - 自定义颜色，如 `#333333`,`#999999`
+ * @param {Boolean} outlined - 无底色按钮 
+ * @param {Boolean} disabled - 禁用按钮 
+ * @example
+ *
+ * <m-button type="primary">按钮</m-button>
+ * <m-button type="primary" outlined>无底色按钮</m-button>
+ * <m-button type="primary" disabled>禁用按钮</m-button>
+ * <m-button type="primary" size="large">块级按钮</m-button>
+ */
 export default {
-  name: 'button',
+  name: 'Button',
   props:{
     type:{
       type:String,

@@ -25,7 +25,7 @@
                 完成
             </span>
         </m-header>
-        <m-header title="页面标题" style="margin-top:10px;" type="white">
+        <m-header title="页面标题" style="margin-top:10px;" color="white">
             <router-link to='List' slot="left" tag="span">
                <i class="iconfont">&#xe72a;</i>
                 <span class="m-header-left-text">返回</span>
@@ -35,7 +35,7 @@
                 <i class="iconfont">&#xe732;</i>
             </div>
         </m-header>
-        <m-header style="margin-top:10px;" tabs type="white">
+        <m-header style="margin-top:10px;" tabs color="white">
             <router-link to='List' slot="left" tag="span">
                 <i class="iconfont">&#xe72a;</i>
                 <span class="m-header-left-text">返回</span>

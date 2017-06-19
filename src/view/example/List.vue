@@ -11,7 +11,7 @@
             <i class="icon iconfont" slot="icon">&#xe6ec;</i>
         </m-cell>
         <m-cell title="Header" name="Header" icon></m-cell>
-        
+        <m-cell title="Spinner" name="Spinner" icon></m-cell>
     </div>
     
 </div>  
@@ -20,8 +20,6 @@
 
 </style>
 <script>
-export default {
-  
-}
+
 </script>
 
