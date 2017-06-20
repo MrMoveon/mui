@@ -1,5 +1,5 @@
 <template>
-  <div class="spinner">
+  <div class="m-spinner">
     <img :style="[{width:size+'px'},{height:size+'px'}]" :src="path" alt="">
   </div>
 </template>
@@ -44,5 +44,10 @@ export default {
 
 
 <style lang='less'>
-
+@import '../assets/less/variables.less';
+.@{name}spinner{
+  img{
+    display: block;
+  }
+}
 </style>

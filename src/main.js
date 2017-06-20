@@ -6,8 +6,10 @@ import router from './router'
 import mcomponent from './components/index'
 import './assets/less/mui.less'
 
-import Toast from './components/toast/Toast'
-Vue.use(Toast);
+import Toast from './components/toast/Toast.js'
+import Indicator from './components/indicator/Indicator.js'
+Vue.use(Toast)
+Vue.use(Indicator)
 Vue.config.productionTip = false
 Vue.use(mcomponent);
 /* eslint-disable no-new */

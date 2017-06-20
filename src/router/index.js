@@ -9,6 +9,7 @@ import Header from '@/view/example/Page-header'
 import Spinner from '@/view/example/Page-spinner'
 //js
 import Toast from '@/view/example/Page-toast'
+import Indicator from '@/view/example/Page-indicator'
 Vue.use(Router)
 
 export default new Router({
@@ -51,6 +52,11 @@ export default new Router({
       path: '/Toast',
       name: 'Toast',
       component: Toast
+    },
+     {
+      path: '/Indicator',
+      name: 'Indicator',
+      component: Indicator
     }
   ]
 })

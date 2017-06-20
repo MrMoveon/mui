@@ -9,7 +9,7 @@
 <script>
 /**
  * m-toast
- * @desc 消息提示框，支持自定义位置、持续时间和样式
+ * @desc 消息提示框，支持自定义位置、图标、持续时间和样式
  * @param {string} position - 位置，可选 `top`,`bottom`,`middle`
  * @param {string} color - 自定义颜色，如 `#333333`,`rgba(0,0,0,0.6)`
  * @param {number} duration - 持续时间 
@@ -46,12 +46,11 @@ export default {
     icon:{
         type:String,
         default:''
+    },
+    visible:{
+        type:Boolean,
+        default:false
     }
-  },
-  data(){
-     return {
-        visible:false
-     }
   },
   methods:{
       setTimer(){
@@ -71,7 +70,6 @@ export default {
   },
   mounted(){
     //组件挂载完成，显示
-    this.visible=true;
     this.setTimer();
   }
   

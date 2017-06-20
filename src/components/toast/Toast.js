@@ -1,7 +1,7 @@
 import Vue from 'vue';
 const ToastConstructor=Vue.extend(require('./Toast.vue'));
 let tid=1;
-let Toast=(options)=>{
+let Toast=(options={})=>{
     
     let id = 'toast-' + tid++
     const ToastInstance=new ToastConstructor();
@@ -15,7 +15,9 @@ let Toast=(options)=>{
     ToastInstance.tIndex=tid;                                                           //设置toast组件z-index
     ToastInstance.vm = ToastInstance.$mount()                                           // 挂载但是并未插入dom，是一个完整的Vue实例
     document.body.appendChild(ToastInstance.vm.$el)                                     // 将dom插入body
-
+    Vue.nextTick(() => {
+      ToastInstance.visible = true;
+    });
     return ToastInstance.vm
 }
 
