@@ -1,5 +1,5 @@
 <template>
-  <button class="m-button" :class="[buttonClass]" :style="[buttonStyle]">
+  <button class="m-button" :class="[buttonClass]" :style="[buttonStyle]" @click="handleClick">
     <slot></slot>
   </button>
 </template>
@@ -73,6 +73,11 @@ export default {
       }
     }
    
+  },
+  methods:{
+    handleClick(ev){
+      this.$emit('click',ev);
+    }
   }
 }
 </script>

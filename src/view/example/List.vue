@@ -12,14 +12,25 @@
         </m-cell>
         <m-cell title="Header" name="Header" icon></m-cell>
         <m-cell title="Spinner" name="Spinner" icon></m-cell>
+        <div class="content-padded">js基础组件</div>
+        <m-cell title="Toast" name="Toast" icon></m-cell>
     </div>
-    
+    <!--<m-toast position="bottom" msg="hello"></m-toast>-->
 </div>  
 </template>
 <style>
 
 </style>
 <script>
+// import Toast from '../../components/toast/Toast'
 
+export default {
+    components: {
+        //mToast:Toast
+    },
+    mounted(){
+      
+    }
+}
 </script>
 

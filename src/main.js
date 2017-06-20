@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import mcomponent from './components/index'
 import './assets/less/mui.less'
+
+import Toast from './components/toast/Toast'
+Vue.use(Toast);
 Vue.config.productionTip = false
 Vue.use(mcomponent);
 /* eslint-disable no-new */

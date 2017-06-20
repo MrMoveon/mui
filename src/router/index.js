@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import List from '@/view/example/List'
+//css
 import Cell from '@/view/example/Page-cell'
 import Button from '@/view/example/Page-button'
 import Badge from '@/view/example/Page-badge'
 import Header from '@/view/example/Page-header'
 import Spinner from '@/view/example/Page-spinner'
+//js
+import Toast from '@/view/example/Page-toast'
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +46,11 @@ export default new Router({
       path: '/Spinner',
       name: 'Spinner',
       component: Spinner
+    },
+    {
+      path: '/Toast',
+      name: 'Toast',
+      component: Toast
     }
   ]
 })
