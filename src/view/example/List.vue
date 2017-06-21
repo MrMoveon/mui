@@ -2,6 +2,7 @@
     <div class="page">
         <m-header title="mui" fixed></m-header>
         <div class="content">
+            <!--css组件-->
             <div class="content-padded">css基础组件</div>
             <m-cell title="Button" name="Button" icon></m-cell>
             <m-cell title="Badge" name="Badge" icon>
@@ -12,9 +13,12 @@
             </m-cell>
             <m-cell title="Header" name="Header" icon></m-cell>
             <m-cell title="Spinner" name="Spinner" icon></m-cell>
+            <!--js组件-->
             <div class="content-padded">js基础组件</div>
             <m-cell title="Toast" name="Toast" icon></m-cell>
             <m-cell title="Indicator" name="Indicator" icon></m-cell>
+            <!--form组件-->
+            <div class="content-padded">form基础组件</div>
            <!--<Indicator ></Indicator>-->
         </div>
     </div>

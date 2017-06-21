@@ -30,26 +30,28 @@
 
 </style>
 <script>
+import Indicator from '../../components/indicator';
 export default {
   methods:{
     type01(){
-        var type01=this.$Indicator();
+        Indicator.open();
         setTimeout(()=>{
-            type01.close();
+            Indicator.close();
         },1000)
     },
     type02(){
-         var type02=this.$Indicator({
+        Indicator.open({
             spinnerType:'ellipsis'
         });
         setTimeout(()=>{
-            type02.close();
+            Indicator.close();
         },1000)
+        
     },
     type03(){
-        var type03=this.$Indicator('加载中...');
+        Indicator.open('加载中...');
         setTimeout(()=>{
-            type03.close();
+            Indicator.close();
         },1000)
     }
   }

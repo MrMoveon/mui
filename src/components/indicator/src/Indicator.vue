@@ -1,21 +1,34 @@
 <template>
     <transition name="fade">
-        <div class="m-indicator" v-if="visible">
+        <div class="m-indicator" v-show="visible">
             <div class="m-indicator-container">
                 <m-spinner :type="spinnerType" :size="40"></m-spinner>
                 <div v-if="text">{{text}}</div>
             </div>
         </div>
     </transition>
+    
 </template>
 <script>
+/**
+ * m-indicator
+ * @desc 加载提示框
+ * @param {string} text - 显示文本 
+ * @param {boolean} visible - 显示隐藏
+ * @param {string} spinnerType - 显示加载图标,传入图标名字：default ellipsis
+ * @example
+ * 
+ * 组件调用
+ * <m-indicator text="加载中..." spinnerType="ellipsis" :visible='true'></m-indicator>
+ * js调用
+ * import Indicator from '../../components/indicator/Indicator.js';
+ * Indicator.open({
+ *      text:'加载中...'
+ *      spinnerType:'ellipsis',
+ *  })
+ */
 export default {
     name:'Indicator',
-    data(){
-        return{
-
-        }
-    },
     props:{
         text:{
             type:String,
@@ -29,22 +42,13 @@ export default {
             type:Boolean,
             default:false
         }
-    },
-    methods:{
-        close(){
-            this.visible=false;
-            setTimeout(()=>{
-                this.$destroy(true);
-                this.$el ||this.$el.parentNode.removeChild(this.$el)
-            },500)
-            
-        }
     }
+    
 }
 </script>
 <style lang='less'>
-@import '../../assets/less/variables.less';
-.@{name}indicator{
+
+.m-indicator{
     position: fixed;
     left: 0;
     right:0;

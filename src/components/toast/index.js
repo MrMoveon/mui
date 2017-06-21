@@ -1,5 +1,5 @@
 import Vue from 'vue';
-const ToastConstructor=Vue.extend(require('./Toast.vue'));
+const ToastConstructor=Vue.extend(require('./src/Toast.vue'));
 let tid=1;
 let Toast=(options={})=>{
     
