@@ -20,20 +20,22 @@
             <!--form组件-->
             <div class="content-padded">form基础组件</div>
            <!--<Indicator ></Indicator>-->
+           
         </div>
+        <m-dialog></m-dialog>
     </div>
 </template>
 
 <script>
-//import Indicator from '../../components/indicator/Indicator.vue'
+import Dialog from '../../components/dialog/src/dialog'
 export default{
     data(){
         return{
-
+           
         }
     },
     components:{
-       // Indicator
+        mDialog:Dialog
     },
 
     methods:{
