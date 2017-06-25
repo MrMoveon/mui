@@ -17,17 +17,19 @@
             <div class="content-padded">js基础组件</div>
             <m-cell title="Toast" name="Toast" icon></m-cell>
             <m-cell title="Indicator" name="Indicator" icon></m-cell>
+            <m-cell title="Dialog" name="Dialog" icon></m-cell>
             <!--form组件-->
             <div class="content-padded">form基础组件</div>
            <!--<Indicator ></Indicator>-->
            
         </div>
-        <m-dialog></m-dialog>
+        <!--<m-dialog title="提示" text="欢迎使用mui框架"></m-dialog>-->
     </div>
 </template>
 
 <script>
-import Dialog from '../../components/dialog/src/dialog'
+// import Dialog from '../../components/dialog/src/dialog'
+import Dialog from '../../components/dialog';
 export default{
     data(){
         return{
@@ -35,9 +37,25 @@ export default{
         }
     },
     components:{
-        mDialog:Dialog
+      //  mDialog:Dialog
     },
-
+    mounted(){
+        // Dialog.alert({
+        //     title:'提示',
+        //     text:'hello mui框架',
+        //     showCancelButton:true,
+        //     callback(action){
+        //         if(action=='confirm'){
+                    
+        //             return false;
+        //         }
+        //         if(action=='cancel'){
+                    
+        //         }
+                
+        //     }
+        // })
+    },
     methods:{
         load(){
             this.$Indicator({

@@ -1,41 +1,77 @@
 <template>
 <div class="m-dialog">
-    <div class="m-dialog-wrap">
-        <div class="m-dialog-inner">
-            <div class="m-dialog-title">提示</div>
-            <div class="m-dialog-text">欢迎使用mui框架</div>
-        </div>
-        <div class="m-dialog-buttons">
-            <span class="m-dialog-button">取消</span>
-            <span class="m-dialog-button">确定</span>
-        </div>
-    </div>    
-    <div class="m-dialog-mask"></div>
+    <transition name="pop">
+        <div class="m-dialog-wrap" v-show="visible">
+            <div class="m-dialog-inner">
+                <div class="m-dialog-title">{{title}}</div>
+                <div class="m-dialog-text">{{text}}</div>
+            </div>
+            <div class="m-dialog-buttons">
+                <span class="m-dialog-button" v-show="showCancelButton" @click="handleCallback('cancel')">{{cancelText}}</span>
+                <span class="m-dialog-button" v-show="showConfirmButton" @click="handleCallback('confirm')">{{confirmText}}</span>
+            </div>
+        </div>    
+     </transition>
+    <div class="m-dialog-mask" @click="handleClose()" v-show="visible" :style="{backgroundColor:'rgba(0,0,0,'+maskOpacity+')'}"></div>
+   
 </div>
+
 </template>
 <script>
 export default {
-  
+  name:'dialog',
+  data(){
+      return {
+          title:'提示',
+          text:'',
+          cancelText:'取消',
+          confirmText:'确定',
+          showCancelButton:false,
+          showConfirmButton:true,
+          callback:null,
+          visible:false,
+          maskClose:false,
+          maskOpacity:0.6
+      }
+  },
+  props:{
+     
+  },
+  methods:{
+    handleCallback(action){
+        var callback=this.callback;
+        //callback(action);
+        //根据return false 来判断是否关闭弹出框
+        var isClose=callback(action);
+        if(isClose!=false){
+            this.visible=false;
+        }
+      
+    },
+    handleClose(){
+        if(this.maskClose){
+            this.visible=false;
+        }
+    }
+  }
 }
 </script>
 <style lang='less'>
 @import '../../../assets/less/variables.less';
 @import '../../../assets/less/mixins.less';
 .m-dialog{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right:0;
-    bottom:0;
+    position: absolute;
     z-index: 9999;
     &-wrap{
         width: 270px;
         background: #fff;
-        position: absolute;
+        position: fixed;
+        z-index:10001;
         left: 50%;
         top:50%;
-        transform: translate(-50%,-50%);
+        transform: scale(1) translate(-50%,-50%);
         border-radius:12px;
+        transform-origin:0% 0%;
     }
     &-inner{
        padding: 15px;
@@ -70,7 +106,21 @@ export default {
     &-mask{
         width: 100%;
         height: 100%;
+        position:fixed;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        z-index:10000;
         background: rgba(0,0,0,0.4);
     }
+}
+.pop-enter-active, .pop-leave-active {
+  transition: all .2s ease
+}
+.pop-enter, .pop-leave-to{
+  opacity: 0;
+  transform: scale(0.8) translate(-50%,-50%);
+  transform-origin:0% 0%;
 }
 </style>

@@ -10,6 +10,7 @@ import Spinner from '@/view/example/Page-spinner'
 //js
 import Toast from '@/view/example/Page-toast'
 import Indicator from '@/view/example/Page-indicator'
+import Dialog from '@/view/example/Page-dialog'
 Vue.use(Router)
 
 export default new Router({
@@ -57,6 +58,11 @@ export default new Router({
       path: '/Indicator',
       name: 'Indicator',
       component: Indicator
+    },
+    {
+      path: '/Dialog',
+      name: 'Dialog',
+      component: Dialog
     }
   ]
 })
