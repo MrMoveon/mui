@@ -32,6 +32,9 @@
 <script>
 import Indicator from '../../components/indicator';
 export default {
+  destroyed(){
+    Indicator.close();
+  },
   methods:{
     type01(){
         Indicator.open();

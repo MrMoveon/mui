@@ -2,6 +2,7 @@
     <div class="page">
         <m-header title="mui" fixed></m-header>
         <div class="content">
+             <m-switch></m-switch>
             <!--css组件-->
             <div class="content-padded">css基础组件</div>
             <m-cell title="Button" name="Button" icon></m-cell>
@@ -21,7 +22,7 @@
             <!--form组件-->
             <div class="content-padded">form基础组件</div>
            <!--<Indicator ></Indicator>-->
-           
+          
         </div>
         <!--<m-dialog title="提示" text="欢迎使用mui框架"></m-dialog>-->
     </div>

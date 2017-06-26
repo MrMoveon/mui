@@ -31,9 +31,8 @@ export default {
      * 关闭方法
      */
     close() {
-        if(IndicatorInstance){
-             IndicatorInstance.visible = false;
-        }
+        if(!IndicatorInstance) return;
+        IndicatorInstance.visible = false;
     }
 }
 

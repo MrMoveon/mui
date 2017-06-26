@@ -8,7 +8,7 @@ let Toast=(options={})=>{
    // ToastInstance.visible=true;                                                       //设置显示
     ToastInstance.msg=typeof options === 'string' ? options : options.msg;              //设置toast组件props的msg
     ToastInstance.position=options.position || 'middle';                                //设置toast组件props的position
-    ToastInstance.duration=options.duration || 3000;                                    //设置toast组件props的duration
+    ToastInstance.duration=options.duration || 1500;                                    //设置toast组件props的duration
     ToastInstance.color=options.color || 'rgba(0,0,0,0.6)';                             //设置toast组件props的color
     ToastInstance.icon=options.icon || '';                           //设置toast组件props的icon
     ToastInstance.id=id;                                                                //设置toast组件id
