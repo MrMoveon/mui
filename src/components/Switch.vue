@@ -1,5 +1,5 @@
 <template>
-  <div class="m-switch" @click.prevent="chek">
+  <div class="m-switch" :class="'m-switch--'+color" @click.prevent="chek">
     <label>
       <input type="checkbox" class="m-switch-input" v-model="value" >
       <div class="m-switch-handle" :style="{opacity:disabled?0.5:1}"></div>
@@ -9,12 +9,18 @@
 </template>
 
 <script>
+/**
+ * m-switch
+ * @desc 开关按钮
+ * @param {Boolean} value - 传递的值
+ * @param {Boolean} disabled - 是否禁用
+ * @param {string} color - 可选颜色，如 `blue`,`org`,`red`,`green`
+ * @example
+ * <m-switch :value.sync='isChecked2' color="org">开关 {{isChecked2}}</m-switch>
+ * 
+ */
 export default {
   name: 'Switch',
-  data () {
-    return {
-    }
-  },
   props:{
     value:{
       type:Boolean,
@@ -23,11 +29,11 @@ export default {
     disabled:{
       type:Boolean,
       default:false
-    }
+    },
+    color:String
   },
   methods:{
     chek(){
-      
       if(this.disabled) return;
       this.$emit('update:value',!this.value)
     }
@@ -39,7 +45,7 @@ export default {
 <style lang='less'>
 @import '../assets/less/variables.less';
 @import '../assets/less/mixins.less';
-.m-switch{
+.@{name}switch{
   display: flex;
   flex-direction: row;
   align-items:center;
@@ -48,10 +54,10 @@ export default {
     width: 50px;
     height: 30px;
   }
-  &-input{
+  .@{name}switch-input{
    display: none;
    opacity: 0;
-    &:checked + .m-switch-handle{
+    &:checked + .@{name}switch-handle{
       &:after{
          background: @color-primary;
       }
@@ -60,7 +66,27 @@ export default {
       }
     }
   }
-  &-handle{
+  &.@{name}switch--blue{
+     .m-switch-input:checked + .m-switch-handle:after{
+        background:@color-blue;
+     }
+  }
+   &.@{name}switch--red{
+     .m-switch-input:checked + .m-switch-handle:after{
+        background:@color-red;
+     }
+  }
+   &.@{name}switch--org{
+     .m-switch-input:checked + .m-switch-handle:after{
+        background:@color-org;
+     }
+  }
+   &.@{name}switch--green{
+     .m-switch-input:checked + .m-switch-handle:after{
+        background:@color-green;
+     }
+  }
+  .@{name}switch-handle{
      position: relative;
      width: 50px;
      height: 30px;
@@ -96,7 +122,7 @@ export default {
        
      }
   }
-  &-label{
+  .@{name}switch-label{
     display: inline-block;
     padding-left: 10px;
   }

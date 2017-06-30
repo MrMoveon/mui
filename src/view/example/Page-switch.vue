@@ -11,7 +11,7 @@
             <m-switch :value.sync='isChecked'>开关 {{isChecked}}</m-switch>
         </div>
         <div class="content-padded">
-            <m-switch :value.sync='isChecked2'>开关 {{isChecked2}}</m-switch>
+            <m-switch :value.sync='isChecked2' color="org">开关 {{isChecked2}}</m-switch>
         </div>
         <div class="content-padded">
             <m-switch :value.sync='isChecked5' disabled>开关 禁用 {{isChecked5}}</m-switch>
@@ -21,11 +21,11 @@
         </div>
         <m-cell title="开关" name="Switch">
             <span slot='label'> {{isChecked3}}</span>
-            <m-switch :value.sync='isChecked3' slot="switch"></m-switch>
+            <m-switch :value.sync='isChecked3' color="red" slot="switch"></m-switch>
         </m-cell>
         <m-cell title="开关" name="Switch" >
             <span slot='label'> {{isChecked4}}</span>
-            <m-switch :value.sync='isChecked4' slot="switch"></m-switch>
+            <m-switch :value.sync='isChecked4' color="green" slot="switch"></m-switch>
         </m-cell>
          <m-cell title="开关" name="Switch">
             <span slot='label'>禁用 {{isChecked5}}</span>
