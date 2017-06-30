@@ -11,6 +11,8 @@ import Spinner from '@/view/example/Page-spinner'
 import Toast from '@/view/example/Page-toast'
 import Indicator from '@/view/example/Page-indicator'
 import Dialog from '@/view/example/Page-dialog'
+//form
+import Switch from '@/view/example/Page-switch'
 Vue.use(Router)
 
 export default new Router({
@@ -63,6 +65,11 @@ export default new Router({
       path: '/Dialog',
       name: 'Dialog',
       component: Dialog
+    },
+    {
+      path: '/Switch',
+      name: 'Switch',
+      component: Switch
     }
   ]
 })

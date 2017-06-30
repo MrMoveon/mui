@@ -8,6 +8,7 @@
     </m-header>
     <div class="content">
         <m-cell title="普通列表" icon></m-cell>
+        <m-cell title="跳转链接" to="http://www.baidu.com" icon></m-cell>
         <m-cell title="带badge列表" icon>
             <m-badge type="danger" size="small" slot="badge">12</m-badge>
         </m-cell>
@@ -17,6 +18,7 @@
          <m-cell title="带左侧图片" value="带图片" icon>
              <img src="../../assets/logo.png" slot="icon" />
         </m-cell>
+        <m-cell title="带路由" :to="{name:'List'}" icon></m-cell>
 
     </div>
     
