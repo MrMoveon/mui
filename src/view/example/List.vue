@@ -99,6 +99,11 @@ export default{
                            title:"Switch",
                            to:{name:'Switch'},
                            icon:true
+                        },
+                        {
+                           title:"Checklist",
+                           to:{name:'Checklist'},
+                           icon:true
                         }
                         
                    ]

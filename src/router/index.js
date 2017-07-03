@@ -13,6 +13,7 @@ import Indicator from '@/view/example/Page-indicator'
 import Dialog from '@/view/example/Page-dialog'
 //form
 import Switch from '@/view/example/Page-switch'
+import Checklist from '@/view/example/Page-check'
 Vue.use(Router)
 
 export default new Router({
@@ -70,6 +71,11 @@ export default new Router({
       path: '/Switch',
       name: 'Switch',
       component: Switch
+    },
+    {
+      path: '/Checklist',
+      name: 'Checklist',
+      component: Checklist
     }
   ]
 })

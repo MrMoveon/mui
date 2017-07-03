@@ -4,6 +4,7 @@ import Cell from './Cell.vue';
 import Header from './Header.vue';
 import Spinner from './Spinner.vue';
 import Switch from './Switch.vue';
+import Checklist from './Checklist.vue';
 const install=(Vue)=>{
     Vue.component('m-badge',Badge);
     Vue.component('m-button',Button);
@@ -11,6 +12,7 @@ const install=(Vue)=>{
     Vue.component('m-header',Header);
     Vue.component('m-spinner',Spinner);
     Vue.component('m-switch',Switch);
+    Vue.component('m-checklist',Checklist);
 }
 export {
     Badge,
