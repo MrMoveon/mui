@@ -8,8 +8,9 @@
     </m-header>
     <div class="content">
         <div class="content-padded">
-            <m-checklist :options="options" :value.sync='value'></m-checklist>
-            {{value}}
+          
+             <m-checklist :options="options" :value.sync="value"></m-checklist>
+            选中的值：{{value}}
         </div>
     </div>
     
@@ -22,21 +23,27 @@
 export default {
   data(){
       return {
-          value:[],
+        value:['03'],
+        checkname:[],
         options:[
             {
             label:'选项01',
             value:'01',
-            disabled:true
+            disabled:false
             },
             {
             label:'选项02',
             value:'02',
-            disabled:true
+            disabled:false
             },
             {
-            label:'选项03',
+            label:'选项03----已选中----禁用',
             value:'03',
+            disabled:true
+            },
+             {
+            label:'选项04----未选中----禁用',
+            value:'04',
             disabled:true
             }
         ]
