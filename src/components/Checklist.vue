@@ -1,7 +1,7 @@
 <template>
 <div class="m-checklist-wrap">
   <div class="m-checklist" :class="{'is-disabled':item.disabled}" v-for="(item,index) in options" :key='index'  @click="$emit('change',currentValue)">
-    <label>
+    <label :class="{'is-right':direction=='right'}">
       <input type="checkbox" v-model="currentValue" :value="item.value" :disabled="item.disabled">
       <div class="m-checkbox-handle"></div>
       <span class="m-checklist-label">{{item.label}}</span>
@@ -23,6 +23,7 @@ export default {
         type:Array,
         required: true
       },
+      direction:String,
       value:Array
   },
 
@@ -44,9 +45,16 @@ export default {
   height: 44px;
   label{
     display: flex;
-    flex-direction: row;
+    flex-direction:  row;
     height: 44px;
     align-items: center;
+    &.is-right{
+      flex-direction:  row-reverse;
+      justify-content: space-between;
+      .@{name}checklist-label{
+        padding-left: 0px;
+      }
+    }
   }
   input[type='checkbox']{
     display: none;

@@ -30,7 +30,6 @@ export default {
     height: 44px;
     top: 0;
     z-index:-1;
-
     background:#0894ec;
   }
 }
