@@ -1,7 +1,7 @@
 <template>
 <div class="page">
     <m-header title="Checklist" fixed>
-        <router-link to='List' slot="left" tag="span">
+        <router-link to='/List' slot="left" tag="span">
             <i class="iconfont">&#xe72a;</i>
             <span class="m-header-left-text">返回</span>
         </router-link>

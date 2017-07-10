@@ -28,52 +28,52 @@ export default new Router({
       component: List
     },
      {
-      path: '/Cell',
+      path: '/List/Cell',
       name: 'Cell',
       component: Cell
     },
      {
-      path: '/Button',
+      path: '/List/Button',
       name: 'Button',
       component: Button
     },
      {
-      path: '/Header',
+      path: '/List/Header',
       name: 'Header',
       component: Header
     },
      {
-      path: '/Badge',
+      path: '/List/Badge',
       name: 'Badge',
       component: Badge
     },
      {
-      path: '/Spinner',
+      path: '/List/Spinner',
       name: 'Spinner',
       component: Spinner
     },
     {
-      path: '/Toast',
+      path: '/List/Toast',
       name: 'Toast',
       component: Toast
     },
      {
-      path: '/Indicator',
+      path: '/List/Indicator',
       name: 'Indicator',
       component: Indicator
     },
     {
-      path: '/Dialog',
+      path: '/List/Dialog',
       name: 'Dialog',
       component: Dialog
     },
     {
-      path: '/Switch',
+      path: '/List/Switch',
       name: 'Switch',
       component: Switch
     },
     {
-      path: '/Checklist',
+      path: '/List/Checklist',
       name: 'Checklist',
       component: Checklist
     }

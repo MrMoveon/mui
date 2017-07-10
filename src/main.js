@@ -16,6 +16,11 @@ Vue.use(mcomponent);
 new Vue({
   el: '#app',
   router,
+  data(){
+    return {
+      transitionName:'slide-left'
+    }
+  },
   template: '<App/>',
   components: { App }
 })
