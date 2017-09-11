@@ -1,0 +1,1 @@
+export { default } from './src/wing-blank.vue'

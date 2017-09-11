@@ -5,7 +5,7 @@
 </template>
 <script>
     export default{
-        name: 'page'
+        name: 'mui-page'
     }
 </script>
 <style lang="less">
