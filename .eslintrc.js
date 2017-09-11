@@ -17,6 +17,10 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
+    "indent": [2,4], //空格缩进
+    "one-var": 0, //是否var连续声明
+    "no-undef": 0, //1 不能有未定义的变量
+    "eol-last": 0, //文件以单一的换行符结束
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await

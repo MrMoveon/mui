@@ -1,19 +1,17 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
+  <div class="mui-page">
+      <slot></slot>
   </div>
 </template>
-
 <script>
-export default {
-    name: 'app'
-}
+    export default{
+        name: 'page'
+    }
 </script>
-
 <style lang="less">
-@import './assets/less/variables.less';
-@import './assets/less/mixins.less';
-#app {
+@import '../../../assets/less/variables.less';
+@import '../../../assets/less/mixins.less';
+.mui-page {
     position: absolute;
     top: 0;
     right: 0;

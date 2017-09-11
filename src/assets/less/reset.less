@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout:none;
+}
+
+// We fix position the body and scroll `.content`.
+html{
+    font-family: @font-family-default;
+}
+body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: @font-family-default;
+    font-size: @font-size-default;
+    line-height: 1.5;
+    color: @color-text;
+    overflow: hidden;
+}
+
+a, input, textarea, select, button {
+    outline: 0;
+}
+p {
+    margin: 0;
+}
+a {
+    color: @color-text;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); // Removes the dark touch outlines on links in webkit browsers.
+&:active {
+    color: @color-text;
+}
+}
+
+
+//  浮动
+.mui-pull-left {
+    float: left;
+}
+.mui-pull-right {
+    float: right;
+}
+.mui-clearfix {
+    .clearfix();
+}
+
+
+//   z-index    1000 page   2000 sidebar   3000 dialog    4000  toast
+
+
+.mui-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    .page-width;
+}
+
+
+
+//左右移动动画
+.slide-left-enter, .slide-right-leave-active {
+    opacity: 0;
+    -webkit-transform: translate(50/@rem, 0);
+    transform: translate(50/@rem, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+    opacity: 0;
+    -webkit-transform: translate(-50/@rem, 0);
+    transform: translate(-50/@rem, 0);
+}
+//上下移动动画
+.slide-top-enter, .slide-bottom-leave-active {
+    opacity: 0;
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+}
+.slide-top-leave-active, .slide-bottom-enter {
+    opacity: 0;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
