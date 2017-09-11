@@ -1,6 +1,6 @@
-# mui
+# vue-mui
 
-> mui base components
+> vue-mui components
 
 ## Build Setup
 
