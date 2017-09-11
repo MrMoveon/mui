@@ -8,9 +8,9 @@
 			</mui-flex>
 			<mui-white-space size="xl"></mui-white-space>
 			<mui-wing-blank size="lg">
-				<mui-cell  title="Mui Example" icon='appstoreo'></mui-cell>
+				<mui-cell  title="Mui Example" icon='appstoreo' :to="{name:'List'}"></mui-cell>
 				<mui-white-space size="lg"></mui-white-space>
-				<mui-cell  title="Github" icon='github'></mui-cell>
+				<mui-cell  title="Github" icon='github' to="https://github.com/MrMoveon/mui/tree/dev2.0"></mui-cell>
 			</mui-wing-blank>
 		
 		</mui-page-container>
@@ -30,6 +30,7 @@ export default {
 	background: #f5f5f9;
 }
 .main-logo{
+	margin-bottom:60/@rem;
 	.logo{
 		width: 168/@rem;
 		height:168/@rem;

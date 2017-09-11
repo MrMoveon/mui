@@ -83,7 +83,7 @@ export default {
                 }
                 return this.$router.push(this.to)
             } else if (typeof this.to === 'string') {
-                return window.location.href = this.to
+                window.location.href = this.to
             }
         }
     }

@@ -1,12 +1,26 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition :name="transitionName">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'app'
+    name: 'app',
+    data () {
+        return {
+            transitionName: 'slide-left'
+        }
+    },
+    watch: {
+        '$route' (to, from) {
+            const toDepth = to.path.split('/').length
+            const fromDepth = from.path.split('/').length
+            this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+        }
+    }
 }
 </script>
 
@@ -23,7 +37,6 @@ export default {
     z-index: 1000;
     .page-width;
     overflow: hidden;
-    transition: all .5s cubic-bezier(.55,0,.1,1);
-    -webkit-transition: all .5s cubic-bezier(.55,0,.1,1);
+    
 }
 </style>

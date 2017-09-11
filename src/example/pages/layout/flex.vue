@@ -1,6 +1,8 @@
 <template>
 	<mui-page>
-		<mui-header mode='light' fixed title="flex布局"></mui-header>
+		<mui-header mode='light' fixed title="flex布局">
+			<mui-icon name="arrowleft" slot="left" @click="back"></mui-icon>
+		</mui-header>
 		<mui-page-container>
 			<mui-wing-blank>
 				<div class="sub-title">
@@ -102,9 +104,10 @@
 </template>
 
 <script>
-
+import back from '@/mixins/back'
 export default {
-    name: 'flex'
+    name: 'flex',
+    mixins: [back]
 }
 </script>
 <style lang="less">

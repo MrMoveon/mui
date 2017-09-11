@@ -89,7 +89,7 @@ export default {
     color: #fff;
     padding:0 10/@rem;
     .page-width;
-    //.hairline(bottom,@color-split);
+    .sideline(bottom,@color-split);
     
    &.is-fixed{
        position: fixed;

@@ -1,24 +1,39 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/example/Main'
-import Layout from '@/example/pages/layout/layout'
+import List from '@/example/pages/list'
+import Layout from '@/example/pages/layout'
 import Flex from '@/example/pages/layout/flex'
 import WhiteSpace from '@/example/pages/layout/white-space'
 import wingBlank from '@/example/pages/layout/wing-blank'
+
+// css
+import Button from '@/example/pages/css-components/button'
+import Spinner from '@/example/pages/css-components/spinner'
+
+// js
+import Indicator from '@/example/pages/js-components/indicator'
+import Toast from '@/example/pages/js-components/toast'
+import Dialog from '@/example/pages/js-components/dialog'
 Vue.use(Router)
 
 export default new Router({
     routes: [
         {
-            path: '/',
+            path: '/main',
             name: 'Main',
             component: Main
         },
         {
-            path: '/layout',
+            path: '/example/list',
+            name: 'List',
+            component: List
+        },
+        {
+            path: '/example/layout',
             name: 'layout',
             component: Layout,
-            redirect: '/layout/flex',
+            redirect: '/example/layout/flex',
             children: [
                 {
                     path: 'flex',
@@ -36,6 +51,56 @@ export default new Router({
                     component: wingBlank
                 }
             ]
+        },
+        {
+            path: '/example/css',
+            name: 'css',
+            component: Layout,
+            redirect: '/example/css/button',
+            children: [
+                {
+                    path: 'button',
+                    name: 'Button',
+                    component: Button
+                },
+                {
+                    path: 'spinner',
+                    name: 'Spinner',
+                    component: Spinner
+                }
+            ]
+        },
+        {
+            path: '/example/js',
+            name: 'js',
+            component: Layout,
+            redirect: '/example/js/indicator',
+            children: [
+                {
+                    path: 'indicator',
+                    name: 'Indicator',
+                    component: Indicator
+                },
+                {
+                    path: 'toast',
+                    name: 'Toast',
+                    component: Toast
+                },
+                {
+                    path: 'dialog',
+                    name: 'Dialog',
+                    component: Dialog
+                }
+
+            ]
+        },
+        {
+            path: '/',
+            redirect: '/main'
+        },
+        {
+            path: '*',
+            redirect: '/main'
         }
     ]
 })

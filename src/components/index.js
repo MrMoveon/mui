@@ -5,10 +5,12 @@ import Flex from './flex'
 import FlexItem from './flex-item'
 import WingBlank from './wing-blank'
 import WhiteSpace from './white-space'
-
+// css组件
 import Cell from './cell'
 import MediaCell from './media-cell'
-
+import Icon from './icon'
+import Button from './button'
+import Spinner from './spinner'
 // navigation
 import Header from './header'
 const mui = {}
@@ -22,6 +24,9 @@ mui.install = (Vue) => {
 
     Vue.component(Cell.name, Cell)
     Vue.component(MediaCell.name, MediaCell)
+    Vue.component(Icon.name, Icon)
+    Vue.component(Button.name, Button)
+    Vue.component(Spinner.name, Spinner)
 
     Vue.component(Header.name, Header)
 }
@@ -32,8 +37,12 @@ export {
     FlexItem,
     WingBlank,
     WhiteSpace,
+
     Cell,
     MediaCell,
+    Icon,
+    Button,
+    Spinner,
 
     Header
 }
