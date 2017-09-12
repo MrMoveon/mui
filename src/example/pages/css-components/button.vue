@@ -1,7 +1,7 @@
 <template>
     <mui-page>
         <mui-header mode='light' fixed title="Button 按钮">
-            <mui-icon name="arrowleft" slot="left" @click="back"></mui-icon>
+            <mui-button icon="arrowleft" slot="left" @click="back">返回</mui-button>
         </mui-header>
         <mui-page-container>
             <mui-wing-blank>
@@ -24,10 +24,10 @@
 			</mui-wing-blank>
             <mui-white-space size='md'></mui-white-space>
             <mui-wing-blank size="lg">
-                <mui-button type="primary"><mui-icon name="smileo"></mui-icon> 按钮</mui-button>
-                <mui-button type="danger"><mui-icon name="staro"></mui-icon> 按钮</mui-button>
-                <mui-button type="warning"><mui-icon name="hearto"></mui-icon> 按钮</mui-button>
-                <mui-button type="success"><mui-icon name="like"></mui-icon> 按钮</mui-button>
+                <mui-button type="primary" icon='smileo'> 按钮</mui-button>
+                <mui-button type="danger" icon='staro'> 按钮</mui-button>
+                <mui-button type="warning" icon='hearto'> 按钮</mui-button>
+                <mui-button type="success" icon='like'> 按钮</mui-button>
             </mui-wing-blank >
 
            <mui-wing-blank>

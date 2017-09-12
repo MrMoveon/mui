@@ -1,7 +1,7 @@
 <template>
     <mui-page>
         <mui-header title="example" fixed mode='light'>
-            <mui-icon name="arrowleft" slot="left" @click="back"></mui-icon>
+            <mui-button icon="arrowleft" slot="left" @click="back">返回</mui-button>
         </mui-header>
         <mui-page-container>
             <div class="catgory-title">
@@ -15,6 +15,8 @@
             </div>
             <mui-cell title="Button 按钮" :to="{name:'Button'}"></mui-cell>
             <mui-cell title="Spinner 加载器" :to="{name:'Spinner'}"></mui-cell>
+            <mui-cell title="Header 导航" :to="{name:'Header'}"></mui-cell>
+            <mui-cell title="Segment 分段器" :to="{name:'Segment'}"></mui-cell>
              <div class="catgory-title">
                 js组件
             </div>

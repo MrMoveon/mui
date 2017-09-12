@@ -2,7 +2,7 @@
 <transition name="fade">
   <div class="mui-toast" :class="position?'mui-toast--'+position:''" v-if="visible" :style="[{backgroundColor:color},{zIndex:tIndex+9999},styles]">
           
-          <mui-icon v-if="icon" :name="icon" style="font-size:40px;display:block"></mui-icon>
+          <mui-icon v-if="icon" :name="icon"></mui-icon>
           {{msg}}
   </div>
   </transition>
@@ -103,6 +103,10 @@ export default {
     &--middle{
         top:50%;
         transform: translate(-50%,-50%);
+    }
+    .iconfont{
+        .font-dpr(40px);
+        display:block
     }
 }
 .fade-enter-active, .fade-leave-active {

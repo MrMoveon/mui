@@ -13,6 +13,7 @@ import Button from './button'
 import Spinner from './spinner'
 // navigation
 import Header from './header'
+import Segment from './segment'
 const mui = {}
 mui.install = (Vue) => {
     Vue.component(Page.name, Page)
@@ -29,6 +30,7 @@ mui.install = (Vue) => {
     Vue.component(Spinner.name, Spinner)
 
     Vue.component(Header.name, Header)
+    Vue.component(Segment.name, Segment)
 }
 export {
     Page,
@@ -44,6 +46,7 @@ export {
     Button,
     Spinner,
 
-    Header
+    Header,
+    Segment
 }
 export default mui

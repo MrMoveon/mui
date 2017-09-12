@@ -10,6 +10,8 @@ import wingBlank from '@/example/pages/layout/wing-blank'
 // css
 import Button from '@/example/pages/css-components/button'
 import Spinner from '@/example/pages/css-components/spinner'
+import Header from '@/example/pages/css-components/header'
+import Segment from '@/example/pages/css-components/segment'
 
 // js
 import Indicator from '@/example/pages/js-components/indicator'
@@ -67,6 +69,16 @@ export default new Router({
                     path: 'spinner',
                     name: 'Spinner',
                     component: Spinner
+                },
+                {
+                    path: 'header',
+                    name: 'Header',
+                    component: Header
+                },
+                {
+                    path: 'segment',
+                    name: 'Segment',
+                    component: Segment
                 }
             ]
         },

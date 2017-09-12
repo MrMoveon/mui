@@ -1,7 +1,7 @@
 <template>
 	<mui-page>
 		<mui-header mode='light' fixed title="flex布局">
-			<mui-icon name="arrowleft" slot="left" @click="back"></mui-icon>
+			<mui-button icon="arrowleft" slot="left" @click="back">返回</mui-button>
 		</mui-header>
 		<mui-page-container>
 			<mui-wing-blank>

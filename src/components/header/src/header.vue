@@ -7,7 +7,7 @@
 		<slot name="right"></slot>
 	</div>
 	<div class="mui-header-title">
-		<span v-if="!tabs">{{title}}</span>
+		<span v-if="!segment">{{title}}</span>
 		<slot v-else name="middle"></slot>
 	</div>
 </div>
@@ -21,7 +21,7 @@
  * @param {string} size - 尺寸，可选 `noraml`,`large`
  * @param {string} title - 标题
  * @param {Boolean} fixed - 是否浮动到顶部
- * @param {Boolean} tabs - title区中间tab按钮
+ * @param {Boolean} segment - title区中间tab按钮
  * @param {slot} [left] - 显示在左侧区域
  * @param {slot} [right] - 显示在右侧区域
  * @param {slot} [middle] - 显示在中间区域的tab内容
@@ -59,7 +59,7 @@ export default {
             type: Boolean,
             default: false
         },
-        tabs: {
+        segment: {
             type: Boolean,
             default: false
         }
@@ -87,10 +87,17 @@ export default {
     height:@header-height;
     overflow: hidden;
     color: #fff;
-    padding:0 10/@rem;
+    // padding:0 10/@rem;
     .page-width;
     .sideline(bottom,@color-split);
-    
+   .mui-button{
+       background: transparent;
+       border: none;
+       &:not(.is-disabled):active{
+             background: transparent;
+             border: none;
+        }
+    } 
    &.is-fixed{
        position: fixed;
        left: 0;
@@ -99,19 +106,32 @@ export default {
        z-index: 9;
    }
    &--dark{
-    background-color:@color-primary;
+        background-color:@color-primary;
+        .mui-button{
+            color:#fff;
+        }
    }
   
    &--light{
     background-color:#fff;
     color: @color-text;
+    .mui-button{
+       
+        color: @color-text;
+        }
    }
+   .mui-button{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        }
   
 }
 .@{name}header-title{
     position: absolute;
-    left: 80/@rem;
-    right: 80/@rem;
+    left: 160/@rem;
+    right: 160/@rem;
     top: 0;
     text-align: center;
     white-space:nowrap;
@@ -126,10 +146,12 @@ export default {
     float: left;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 80/@rem;
+    width: 160/@rem;
     height:@header-height;
+    font-size: 0;
+    
     .icon-img{
         width: 80/@rem;
         height:80/@rem;
@@ -137,14 +159,32 @@ export default {
             opacity: 0.5;
         }
     }
+    .flex{
+         display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+   
     a,span,i{
         .font-dpr(14px);
         &:active{
             opacity: 0.5;
         }
-        &.iconfont{
-            .font-dpr(20px);
-        }
+    }
+    .mui-button .iconfont,.iconfont{
+        .font-dpr(18px);
+        margin-right: 5/@rem;
+        line-height:1.15;
+    }
+    .text{
+        //display: block;
+       // height: 100%;
+       line-height:1.15;
+    }
+    .mui-button .text{
+        margin-top:3/@rem;
+        padding-left: 2/@rem;
     }
     &-text{
         display: inline-block;
@@ -156,9 +196,9 @@ export default {
     float: right;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 80/@rem;
+   
     height:@header-height;
     .icon-img{
         width: 80/@rem;
@@ -173,33 +213,13 @@ export default {
             opacity: 0.5;
         }
     }
-    
-}
-.@{name}header-tabs-title{
-    height: @header-height;
-    font-size: 0;
-    padding-top:10/@rem;
-    &-item{
-        display:inline-block;
-        width: 122/@rem;
-        height: @header-height - 28/@rem;
-        line-height: @header-height - 28/@rem;
-        background:darken(@color-primary-active, 10%);
-        .font-dpr(15px);
-        border-width: 1px;
-        border-style:solid;
-        border-color:darken(@color-primary-active, 10%);
-        &:first-of-type{
-            border-radius:6/@rem 0 0 6/@rem;
-        }
-        &:last-of-type{
-            border-radius:0 6/@rem 6/@rem 0;
-        }
+   .mui-button .iconfont,.iconfont{
+        .font-dpr(18px);
+       // margin-right: 20/@rem;
     }
-    .active{
-        background: #fff;
-        color: darken(@color-primary-active, 10%);
-        border-color:#fff;
+    .mui-button{
+        padding: 6/@rem 12/@rem 6/@rem 6/@rem;
     }
 }
+
 </style>

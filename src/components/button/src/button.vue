@@ -1,6 +1,8 @@
 <template>
   <button class="mui-button" :class="[buttonClass]" :style="[buttonStyle]" @click="handleClick">
-    <slot></slot>
+        <span class="iconfont" v-if="icon" :class="'icon-'+icon"></span>
+        <span v-if="customIcon" :class="customIcon"></span>
+        <span class="text"><slot></slot></span>
   </button>
 </template>
 
@@ -12,6 +14,8 @@
  * @param {string} size - 尺寸，可选 `noraml`,`large`
  * @param {string} color - 自定义颜色，如 `#333333`,`#999999`
  * @param {Boolean} outlined - 无底色按钮
+ * @param {string} icon - 自带的图标
+ * @param {string} customIcon - 用户自定义图标  mmicon xx-icon
  * @param {Boolean} disabled - 禁用按钮
  * @example
  *
@@ -38,6 +42,14 @@ export default {
         outlined: {
             type: Boolean,
             default: false
+        },
+        icon: {
+            type: String,
+            default: ''
+        },
+        customIcon: {
+            type: String,
+            default: ''
         },
         disabled: {
             type: Boolean,
@@ -76,6 +88,7 @@ export default {
     },
     methods: {
         handleClick (ev) {
+            if (this.disabled) return
             this.$emit('click', ev)
         }
     }
@@ -88,9 +101,8 @@ export default {
 @import '../../../assets/less/mixins.less';
 .@{name}button{
     position: relative;
-    display: inline-block;
+   
     padding: 6/@rem 12/@rem;
-    .font-dpr(14px);
     line-height: 1;
     border-radius:4/@rem;
     transition: all .3s;
@@ -108,6 +120,11 @@ export default {
     }
     &.mui-button--outlined{
         color: #fff;
+    }
+    .text{
+        padding-left: 10/@rem;
+        .font-dpr(14px);
+        line-height: 1.15;
     }
 }
  // background
@@ -174,7 +191,7 @@ export default {
 // size
 
 .@{name}button--noraml{
-    padding: 14/@rem 20/@rem 8/@rem;
+    padding: 12/@rem 20/@rem 12/@rem;
     .font-dpr(14px);
     .iconfont{
         .font-dpr(14px);
@@ -184,7 +201,7 @@ export default {
     display: block;
     .font-dpr(15px);
     width: 100%;
-    padding: 20/@rem 10/@rem;
+    padding: 15/@rem 15/@rem;
     
     margin-bottom: 10/@rem;
     .iconfont{
