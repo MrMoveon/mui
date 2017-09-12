@@ -15,6 +15,7 @@
             </div>
             <mui-cell title="Button 按钮" :to="{name:'Button'}"></mui-cell>
             <mui-cell title="Badge 徽标" :to="{name:'Badge'}"></mui-cell>
+            <mui-cell title="Cell 列表" :to="{name:'Cell'}"></mui-cell>
             <mui-cell title="Spinner 加载器" :to="{name:'Spinner'}"></mui-cell>
             <mui-cell title="Header 导航" :to="{name:'Header'}"></mui-cell>
             <mui-cell title="Segment 分段器" :to="{name:'Segment'}"></mui-cell>

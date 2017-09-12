@@ -28,10 +28,6 @@ export default {
         color: {
             type: String,
             default: ''
-        },
-        size: {
-            type: String,
-            default: 'noraml'
         }
     },
     data () {
@@ -67,14 +63,24 @@ export default {
 @import '../../../assets/less/mixins.less';
 .@{name}badge{
     display: inline-block;
-    padding: 3/@rem 6/@rem;
-    .font-dpr(14px);
-    line-height: 1;
-    padding-top: 3/@rem;
+   
+    .font-dpr(12px);
+   
+    padding: 0 12/@rem;
+    height: 32/@rem;
+    line-height: 34/@rem;
     border-radius:100/@rem;
     color: #fff;
     background-color: @color-danger;
-    
+    &.mui-badge--dot{
+        width: 14/@rem;
+        height:  14/@rem;
+        padding: 0;
+        position: absolute;
+        right: -10/@rem;
+        top:-7/@rem;
+        z-index:999;
+    }
 }
 // background
 .@{name}badge--primary{
@@ -89,14 +95,8 @@ export default {
 .@{name}badge--success{
     background-color: @color-success;
 }
-// size
-.@{name}badge--small{
-    padding: 2/@rem 3/@rem 0 3/@rem;
-    .font-dpr(10px);
-}
-.@{name}badge--noraml{
-    min-width:80/@rem;
-    padding: 3/@rem 6/@rem;
-    .font-dpr(12px);
+
+.@{name}badge--normal{
+   
 }
 </style>

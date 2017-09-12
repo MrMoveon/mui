@@ -14,6 +14,7 @@
         </div>
         <div class="mui-list-right">
             <span v-if="value" class="value">{{value}}</span>
+            <slot name="extra"></slot>
             <i class="iconfont icon-arrow-right" v-if="arrow"></i>
         </div>
     </div>
@@ -92,6 +93,7 @@ export default {
 <style lang='less'>
 @import '../../../assets/less/variables.less';
 @import '../../../assets/less/mixins.less';
+
 .mui-list{
     position: relative;
     display: flex;
@@ -99,7 +101,6 @@ export default {
     justify-content: space-between;
     padding: 20/@rem 30/@rem;
     background:#fff;
-    //居右
     
     .sideline(bottom,#eee);
     .mui-list-left{
@@ -107,16 +108,21 @@ export default {
         flex-direction: row;
         align-items: center;
         .mui-text{
+            position: relative;
             display: flex;
             flex:1;
-            flex-direction: column;
+            flex-direction: row;
             flex-wrap: wrap;
+            align-items:center;
             text-align: left;
             
         }
         .title{
             .font-dpr(14px);
             color:#333;
+            & ~ .mui-badge{
+                margin-left: 10/@rem;
+            }
         }
         
         
@@ -138,25 +144,29 @@ export default {
         margin-right:10/@rem;
         .iconfont{
             position: relative;
-           
             .font-dpr(18px);
         }
         
     }
     .mui-list-right{
-        align-self:center;
-        
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items:center;
         .iconfont{
             .font-dpr(16px);
             color:#999;
         }
         .value{
             .font-dpr(12px);
-            position: relative;
-            top: -3/@rem;
-            display: inline-block;
             color:#999;
         }
+    }
+    &:first-child{
+        .sideline(top,#eee);
+    }
+    &:active{
+        background:#f8f8f8;
     }
 }
 </style>
