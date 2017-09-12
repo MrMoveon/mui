@@ -9,9 +9,12 @@ import wingBlank from '@/example/pages/layout/wing-blank'
 
 // css
 import Button from '@/example/pages/css-components/button'
+import Badge from '@/example/pages/css-components/badge'
+
 import Spinner from '@/example/pages/css-components/spinner'
 import Header from '@/example/pages/css-components/header'
 import Segment from '@/example/pages/css-components/segment'
+import Tabbar from '@/example/pages/css-components/tabbar'
 
 // js
 import Indicator from '@/example/pages/js-components/indicator'
@@ -66,6 +69,11 @@ export default new Router({
                     component: Button
                 },
                 {
+                    path: 'badge',
+                    name: 'Badge',
+                    component: Badge
+                },
+                {
                     path: 'spinner',
                     name: 'Spinner',
                     component: Spinner
@@ -79,6 +87,11 @@ export default new Router({
                     path: 'segment',
                     name: 'Segment',
                     component: Segment
+                },
+                {
+                    path: 'tabbar',
+                    name: 'Tabbar',
+                    component: Tabbar
                 }
             ]
         },

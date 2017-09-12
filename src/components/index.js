@@ -10,10 +10,14 @@ import Cell from './cell'
 import MediaCell from './media-cell'
 import Icon from './icon'
 import Button from './button'
+import Badge from './badge'
 import Spinner from './spinner'
 // navigation
 import Header from './header'
 import Segment from './segment'
+import Tabbar from './tabbar'
+import TabbarItem from './tabbar-item'
+
 const mui = {}
 mui.install = (Vue) => {
     Vue.component(Page.name, Page)
@@ -27,10 +31,14 @@ mui.install = (Vue) => {
     Vue.component(MediaCell.name, MediaCell)
     Vue.component(Icon.name, Icon)
     Vue.component(Button.name, Button)
+    Vue.component(Badge.name, Badge)
+
     Vue.component(Spinner.name, Spinner)
 
     Vue.component(Header.name, Header)
     Vue.component(Segment.name, Segment)
+    Vue.component(Tabbar.name, Tabbar)
+    Vue.component(TabbarItem.name, TabbarItem)
 }
 export {
     Page,
@@ -47,6 +55,8 @@ export {
     Spinner,
 
     Header,
-    Segment
+    Segment,
+    Tabbar,
+    TabbarItem
 }
 export default mui

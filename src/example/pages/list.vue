@@ -14,9 +14,11 @@
                 css组件
             </div>
             <mui-cell title="Button 按钮" :to="{name:'Button'}"></mui-cell>
+            <mui-cell title="Badge 徽标" :to="{name:'Badge'}"></mui-cell>
             <mui-cell title="Spinner 加载器" :to="{name:'Spinner'}"></mui-cell>
             <mui-cell title="Header 导航" :to="{name:'Header'}"></mui-cell>
             <mui-cell title="Segment 分段器" :to="{name:'Segment'}"></mui-cell>
+            <mui-cell title="Tabbar 底部导航" :to="{name:'Tabbar'}"></mui-cell>
              <div class="catgory-title">
                 js组件
             </div>

@@ -91,7 +91,6 @@ export default {
         border-style:solid;
         border-color:@color-primary;
         margin-left:-1px;
-        //color:@color-primary;
         &:first-of-type{
             border-radius:6/@rem 0 0 6/@rem;
         }
@@ -99,22 +98,7 @@ export default {
             border-radius:0 6/@rem 6/@rem 0;
         }
     }
-    .active{
-        
-       // background:@color-primary;
-       // color:#fff;
-       // border-color:@color-primary;
-    }
+   
 }
-    // .mui-segment-item {
-    //     width: 190/@rem;
-    //     background: @color-green;
-    //     border-color: #fff;
-    //     color: #fff;
-    // }
-    // .mui-segment .active {
-    //     color: @color-green;
-    //     background: #fff;
-    // }
-
+  
 </style>

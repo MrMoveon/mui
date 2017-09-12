@@ -1,5 +1,13 @@
 <template>
 	<mui-page class="main">
+		<mui-tabbar
+			tintColor="#41b883" 
+			unselectedTintColor="#888" 
+			:selected.sync="selectedIndex" 
+			:tabbar="tabbar"
+			v-on:onChange="go"
+			>
+		</mui-tabbar>
 		<mui-page-container>
 			<mui-flex class="main-logo" direction="column" align="center">
 					<img class="logo" src="../assets/logo.png" alt="">
@@ -12,15 +20,39 @@
 				<mui-white-space size="lg"></mui-white-space>
 				<mui-cell  title="Github" icon='github' to="https://github.com/MrMoveon/mui/tree/dev2.0"></mui-cell>
 			</mui-wing-blank>
-		
 		</mui-page-container>
+
 	</mui-page>
 </template>
 
 <script>
 
 export default {
-    name: 'main'
+    name: 'main',
+    data () {
+        return {
+            selectedIndex: 0,
+            tabbar: [
+                {
+                    title: '首页',
+                    icon: 'staro',
+                    selectedIcon: 'star',
+                    to: 'Main'
+                },
+                {
+                    title: '组件',
+                    icon: 'appstoreo',
+                    selectedIcon: 'appstore',
+                    to: 'List'
+                }
+            ]
+        }
+    },
+    methods: {
+        go (index) {
+            this.$router.push({name: this.tabbar[index].to})
+        }
+    }
 }
 </script>
 <style lang="less">
