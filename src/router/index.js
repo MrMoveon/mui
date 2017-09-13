@@ -12,10 +12,12 @@ import Button from '@/example/pages/css-components/button'
 import Badge from '@/example/pages/css-components/badge'
 import Cell from '@/example/pages/css-components/cell'
 import Spinner from '@/example/pages/css-components/spinner'
-import Header from '@/example/pages/css-components/header'
-import Segment from '@/example/pages/css-components/segment'
-import Tabbar from '@/example/pages/css-components/tabbar'
-
+// navigation
+import Header from '@/example/pages/navigation/header'
+import Segment from '@/example/pages/navigation/segment'
+import Tabbar from '@/example/pages/navigation/tabbar'
+// swiper
+import Slide from '@/example/pages/swiper/slide'
 // js
 import Indicator from '@/example/pages/js-components/indicator'
 import Toast from '@/example/pages/js-components/toast'
@@ -98,6 +100,20 @@ export default new Router({
                     name: 'Tabbar',
                     component: Tabbar
                 }
+            ]
+        },
+        {
+            path: '/example/swiper',
+            name: 'swiper',
+            component: Layout,
+            redirect: '/example/swiper/slide',
+            children: [
+                {
+                    path: 'slide',
+                    name: 'Slide',
+                    component: Slide
+                }
+
             ]
         },
         {

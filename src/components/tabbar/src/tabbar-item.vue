@@ -19,6 +19,7 @@
  * @param {String} [unselectedTintColor] - 导航未选中的颜色
  * @param {Boolean} [dot] - 小圆点
  * @param {String} [badge] - 徽章
+ * @function onPress 点击事件 (obj) obj.e 当前对象 obj.index当前索引
  */
 export default {
     name: 'mui-tabbar-item',
@@ -97,7 +98,7 @@ export default {
         position: absolute;
         right: 0;
         transform: translateX(80%);
-        top:0;
+        top:4/@rem;
         .font-dpr(12px);
     }
     .mui-badge.mui-badge--dot{

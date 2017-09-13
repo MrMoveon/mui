@@ -4,6 +4,7 @@
             <mui-button icon="arrowleft" slot="left" @click="back">返回</mui-button>
         </mui-header>
         <mui-page-container>
+           
             <div class="catgory-title">
                 布局组件
             </div>
@@ -11,15 +12,22 @@
             <mui-cell title="上下留白" :to="{name:'WhiteSpace'}"></mui-cell>
             <mui-cell title="两翼留白" :to="{name:'wingBlank'}"></mui-cell>
             <div class="catgory-title">
+               Navigation组件
+            </div>
+            <mui-cell title="Header 导航" :to="{name:'Header'}"></mui-cell>
+            <mui-cell title="Segment 分段器" :to="{name:'Segment'}"></mui-cell>
+            <mui-cell title="Tabbar 底部导航" :to="{name:'Tabbar'}"></mui-cell>
+            <div class="catgory-title">
+               Swiper组件
+            </div>
+            <mui-cell title="Slide 幻灯片切换" :to="{name:'Slide'}"></mui-cell>
+            <div class="catgory-title">
                 css组件
             </div>
             <mui-cell title="Button 按钮" :to="{name:'Button'}"></mui-cell>
             <mui-cell title="Badge 徽标" :to="{name:'Badge'}"></mui-cell>
             <mui-cell title="Cell 列表" :to="{name:'Cell'}"></mui-cell>
             <mui-cell title="Spinner 加载器" :to="{name:'Spinner'}"></mui-cell>
-            <mui-cell title="Header 导航" :to="{name:'Header'}"></mui-cell>
-            <mui-cell title="Segment 分段器" :to="{name:'Segment'}"></mui-cell>
-            <mui-cell title="Tabbar 底部导航" :to="{name:'Tabbar'}"></mui-cell>
              <div class="catgory-title">
                 js组件
             </div>
@@ -37,7 +45,12 @@
 import back from '@/mixins/back'
 export default {
     name: 'list',
-    mixins: [back]
+    mixins: [back],
+    data () {
+        return {
+
+        }
+    }
 }
 </script>
 

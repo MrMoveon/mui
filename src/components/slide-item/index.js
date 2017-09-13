@@ -1,0 +1,1 @@
+export { default } from '../slide/src/slide-item.vue'

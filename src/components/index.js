@@ -18,8 +18,12 @@ import Header from './header'
 import Segment from './segment'
 import Tabbar from './tabbar'
 import TabbarItem from './tabbar-item'
-
+//
+import Slide from './slide'
+import SlideItem from './slide-item'
+// 第三方组件
 import Lazyload from './lazyload'
+import Swiper from './swiper'
 const mui = {}
 mui.install = (Vue) => {
     Vue.component(Page.name, Page)
@@ -44,6 +48,8 @@ mui.install = (Vue) => {
     Vue.component(Tabbar.name, Tabbar)
     Vue.component(TabbarItem.name, TabbarItem)
 
+    Vue.component(Slide.name, Slide)
+    Vue.component(SlideItem.name, SlideItem)
     // 使用vue-lazyload插件，
     Vue.use(Lazyload, {
         preLoad: 1.3,
@@ -51,6 +57,8 @@ mui.install = (Vue) => {
         loading: require('../assets/logo.png'),
         attempt: 1
     })
+
+    Vue.prototype.swiper = Swiper
 }
 export {
     Page,
@@ -71,6 +79,10 @@ export {
     Segment,
     Tabbar,
     TabbarItem,
-    Lazyload
+
+    Lazyload,
+    Swiper,
+    Slide,
+    SlideItem
 }
 export default mui
