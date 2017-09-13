@@ -18,9 +18,11 @@ import Header from './header'
 import Segment from './segment'
 import Tabbar from './tabbar'
 import TabbarItem from './tabbar-item'
-//
+// swiper
 import Slide from './slide'
 import SlideItem from './slide-item'
+import ScrollView from './scroll-view'
+import ScrollViewItem from './scroll-view-item'
 // 第三方组件
 import Lazyload from './lazyload'
 import Swiper from './swiper'
@@ -50,6 +52,8 @@ mui.install = (Vue) => {
 
     Vue.component(Slide.name, Slide)
     Vue.component(SlideItem.name, SlideItem)
+    Vue.component(ScrollView.name, ScrollView)
+    Vue.component(ScrollViewItem.name, ScrollViewItem)
     // 使用vue-lazyload插件，
     Vue.use(Lazyload, {
         preLoad: 1.3,
@@ -83,6 +87,8 @@ export {
     Lazyload,
     Swiper,
     Slide,
-    SlideItem
+    SlideItem,
+    ScrollView,
+    ScrollViewItem
 }
 export default mui

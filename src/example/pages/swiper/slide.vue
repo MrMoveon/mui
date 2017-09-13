@@ -1,6 +1,6 @@
 <template>
     <mui-page>
-        <mui-header mode='light' fixed title="Segment 分段器">
+        <mui-header mode='light' fixed title="slide 幻灯">
             <mui-button icon="arrowleft" slot="left" @click="back">返回</mui-button>
         </mui-header>
         <mui-page-container>

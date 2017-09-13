@@ -4,16 +4,13 @@
             <mui-button icon="arrowleft" slot="left" @click="back">返回</mui-button>
         </mui-header>
         <mui-page-container>
-            <mui-wing-blank>
-                <div class="sub-title">
-                    app选项卡
-                </div>
-            </mui-wing-blank>
+           
             <div class="tabbar-container">
                 <div class="tabbar-container-item" v-show="config.selectedIndex===index" v-for="(nav,index) in config.tabbarItem" :key="index">
-                    <p>{{nav.title}}内容</p>
-                    <p style="color:#41b883" @click="visible">点击显示隐藏tabbar</p>
-                    <p style="color:#1e1e1e" @click='changeColor'>点击改变tabbar颜色</p>
+                    <p class="tabtitle">{{nav.title}}内容</p>
+                    <mui-cell title="点击显示隐藏tabbar"  v-on:onPress="visible"></mui-cell>
+                    <mui-cell title="点击改变tabbar颜色"  v-on:onPress="changeColor"></mui-cell>
+                   
                 </div>
             </div>
             <mui-tabbar :hidden="config.hidden">
@@ -114,9 +111,10 @@ export default {
         right:0;
         bottom:0;
         padding-bottom:88/@rem;
-        top:200/@rem;
+        top:88/@rem;
         background: #f8f8f8;
-        .tabbar-container-item{
+        .tabtitle{
+            .font-dpr(14px);
             line-height:2rem;
             text-align: center;
         }

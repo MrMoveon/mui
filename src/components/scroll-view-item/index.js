@@ -1,0 +1,1 @@
+export { default } from '../scroll-view/src/scroll-view-item.vue'

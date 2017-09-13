@@ -74,7 +74,10 @@ export default {
     },
     methods: {
         handleClick () {
-            if (!this.to) return
+            if (!this.to) {
+                this.$emit('onPress')
+                return
+            }
             // 根据:to="{name:'Music'}"  to="http://www.baidu.com"   传递的类型来判断跳转类型
             if (typeof this.to === 'object') {
                 if (this.replace) {

@@ -1,5 +1,5 @@
 <template>
-    <div class="mui-white-space" :class="'mui-white-space-'+size">
+    <div class="mui-white-space" :class="'mui-white-space-'+size" :style="{background:color}">
         <slot></slot>
     </div>
 </template>
@@ -15,6 +15,10 @@ export default {
         size: {
             type: String,
             default: 'lg'
+        },
+        color: {
+            type: String,
+            default: ''
         }
     }
 

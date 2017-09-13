@@ -18,6 +18,7 @@ import Segment from '@/example/pages/navigation/segment'
 import Tabbar from '@/example/pages/navigation/tabbar'
 // swiper
 import Slide from '@/example/pages/swiper/slide'
+import Scroll from '@/example/pages/swiper/scroll'
 // js
 import Indicator from '@/example/pages/js-components/indicator'
 import Toast from '@/example/pages/js-components/toast'
@@ -112,6 +113,11 @@ export default new Router({
                     path: 'slide',
                     name: 'Slide',
                     component: Slide
+                },
+                {
+                    path: 'scroll',
+                    name: 'Scroll',
+                    component: Scroll
                 }
 
             ]
