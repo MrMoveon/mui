@@ -19,6 +19,8 @@ body {
     line-height: 1.5;
     color: @color-text;
     overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 a, input, textarea, select, button {
@@ -31,9 +33,9 @@ a {
     color: @color-text;
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0); // Removes the dark touch outlines on links in webkit browsers.
-&:active {
-    color: @color-text;
-}
+    &:active {
+        color: @color-text;
+    }
 }
 
 

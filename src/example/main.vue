@@ -1,13 +1,22 @@
 <template>
 	<mui-page class="main">
-		<mui-tabbar
-			tintColor="#41b883" 
-			unselectedTintColor="#888" 
-			:selected.sync="selectedIndex" 
-			:tabbar="tabbar"
-			v-on:onChange="go"
-			>
-		</mui-tabbar>
+		<mui-tabbar :hidden="config.hidden">
+                <mui-tabbar-item 
+                    v-for="(item,index) in config.tabbarItem" 
+                    :key="index" 
+                    :index="index"
+                    :title="item.title" 
+                    :icon="item.icon" 
+                    :selectedIcon="item.selectedIcon" 
+                    :selected="config.selectedIndex===index" 
+                    :tintColor="config.tintColor" 
+                    :unselectedTintColor="config.unselectedTintColor"
+                    :dot="item.dot"
+                    :badge="item.badge"
+                    v-on:onPress="selectedTabbar" 
+                >
+                </mui-tabbar-item>
+            </mui-tabbar>
 		<mui-page-container>
 			<mui-flex class="main-logo" direction="column" align="center">
 					<img class="logo" src="../assets/logo.png" alt="">
@@ -31,26 +40,33 @@ export default {
     name: 'main',
     data () {
         return {
-            selectedIndex: 0,
-            tabbar: [
-                {
-                    title: '首页',
-                    icon: 'staro',
-                    selectedIcon: 'star',
-                    to: 'Main'
-                },
-                {
-                    title: '组件',
-                    icon: 'appstoreo',
-                    selectedIcon: 'appstore',
-                    to: 'List'
-                }
-            ]
+            config: {
+                selectedIndex: 0,
+                tintColor: '#41b883',
+                unselectedTintColor: '#888',
+                hidden: false,
+                tabbarItem: [
+                    {
+                        title: '首页',
+                        icon: 'staro',
+                        selectedIcon: 'star',
+                        to: 'Main'
+                    },
+                    {
+                        title: '组件',
+                        icon: 'appstoreo',
+                        selectedIcon: 'appstore',
+                        to: 'List',
+                        dot: true
+                    }
+                ]
+            }
+
         }
     },
     methods: {
-        go (index) {
-            this.$router.push({name: this.tabbar[index].to})
+        selectedTabbar (e) {
+            this.$router.push({name: this.config.tabbarItem[e.index].to})
         }
     }
 }

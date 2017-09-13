@@ -13,10 +13,11 @@ export default {
 @import '../../../assets/less/variables.less';
 @import '../../../assets/less/mixins.less';
 .mui-cell-group{
-  .mui-list{
+  .mui-list,.mui-media-list{
       &:first-child{
           .sideline(top,#eee);
       }
   }  
+  
 }
 </style>

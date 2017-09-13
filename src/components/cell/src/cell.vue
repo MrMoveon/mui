@@ -162,9 +162,7 @@ export default {
             color:#999;
         }
     }
-    &:first-child{
-        .sideline(top,#eee);
-    }
+    
     &:active{
         background:#f8f8f8;
     }

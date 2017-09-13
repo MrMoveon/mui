@@ -1,52 +1,25 @@
 <template>
-  <div class="mui-tabbar" :style="{'background':barTintColor}">
-      <mui-tabbar-item 
-        v-for="(item,index) in tabbar" 
-        :key="index" 
-        :title="item.title" 
-        :icon="item.icon" 
-        :selectedIcon="item.selectedIcon" 
-        :selected="selected===index" 
-        :style="{'color':selected==index?tintColor:unselectedTintColor}"
-        @click="selectedTabbar(index)" 
-        >
-        </mui-tabbar-item>
+  <div class="mui-tabbar" :style="{'background':barTintColor}" v-show="!hidden">
+      <slot></slot>
   </div>
 </template>
 
 <script>
+/**
+ * @description app底部导航栏
+ * @param {String} [barTintColor] - 导航栏背景色
+ * @param {Boolean} [hidden] - 导航栏显示隐藏
+ */
 export default {
     name: 'mui-tabbar',
     props: {
-        tabbar: {
-            type: Array
-        },
-        selected: {
-            type: Number,
-            default: 0
-        },
         barTintColor: {
             type: String,
             default: '#fff'
         },
-        tintColor: {
-            type: String,
-            default: ''
-        },
-        unselectedTintColor: {
-            type: String,
-            default: ''
-        },
         hidden: {
             type: Boolean,
             default: false
-        }
-    },
-
-    methods: {
-        selectedTabbar (index) {
-            this.$emit('update:selected', index)
-            this.$emit('onChange', index)
         }
     }
 }
@@ -68,15 +41,5 @@ export default {
     .sideline(top,#f8f8f8);
     z-index: 2;
 }
-.mui-tabbar-item{
-    
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
-    text-align: center;
-    .iconfont{
-        .font-dpr(20px);
-    }
-}
+
 </style>

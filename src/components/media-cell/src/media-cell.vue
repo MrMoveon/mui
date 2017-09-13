@@ -101,9 +101,8 @@ export default {
     justify-content: space-between;
     padding: 30/@rem 30/@rem;
     background:#fff;
-    //居右
-    
     .sideline(bottom,#eee);
+    //居右
     .mui-media-list-left{
         display: flex;
         flex-direction: row;
@@ -163,6 +162,9 @@ export default {
             .font-dpr(16px);
             color:#999;
         }
+    }
+    &:active{
+        background:#f8f8f8;
     }
 }
 </style>

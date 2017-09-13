@@ -125,6 +125,9 @@ export default {
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        &:active{
+            opacity: 0.5;
+        }
         }
   
 }
@@ -168,9 +171,7 @@ export default {
    
     a,span,i{
         .font-dpr(14px);
-        &:active{
-            opacity: 0.5;
-        }
+        
     }
     .mui-button .iconfont,.iconfont{
         .font-dpr(18px);
