@@ -4,13 +4,25 @@
             <transition name="actionsheet-move">
 
                 <div class="mui-actionsheet-inner" v-if="actionsheet">
-                    <div class="mui-actionsheet-item" v-for="(item,index) in options" :key="index" @click="close">{{item}}</div>
-                    <div class="mui-actionsheet-white-space"></div>
-                    <div class="mui-actionsheet-cancel"  @click="close">取消</div>
+                    <div class="mui-actionsheet-title" v-if="title">{{title}}</div>
+                    <template v-if="shareOptions.length===0">
+                        <div class="mui-actionsheet-item" v-for="(item,index) in options" :key="index" @click="onPress(index)">{{item}}</div>
+                        <div class="mui-actionsheet-white-space"></div>
+                    </template>
+                    
+                    <div class="mui-actionsheet-share" v-if="shareOptions.length>0">
+                        <div class="mui-actionsheet-share-item" v-for="(item,index) in shareOptions" :key="index" @click="onPress(index)">
+                            <p class="icon"><span class="iconfont" :class="'icon-'+item.icon"></span></p>
+                            <p class="name">{{item.name}}</p>
+                        </div>
+                    </div>
+                   
+                    
+                    <div class="mui-actionsheet-cancel"  @click="toggle">取消</div>
                 </div>
 
             </transition>
-            <div class="mui-actionsheet-mask" @click="close"></div>
+            <div class="mui-actionsheet-mask" @click="toggle"></div>
         </div>
     </transition>
 </template>
@@ -19,12 +31,25 @@
 export default {
     name: 'mui-actionsheet',
     props: {
+        title: {
+            type: String,
+            default: ''
+        },
         visible: {
             type: Boolean,
             default: false
         },
         options: {
-            type: Array
+            type: Array,
+            default: function () {
+                return []
+            }
+        },
+        shareOptions: {
+            type: Array,
+            default: function () {
+                return []
+            }
         }
     },
     data () {
@@ -40,11 +65,15 @@ export default {
         }
     },
     methods: {
-        close () {
-            this.actionsheet = false
+        toggle () {
+            this.actionsheet = !this.actionsheet
             setTimeout(() => {
                 this.$emit('update:visible', false)
             }, 300)
+        },
+        onPress (index) {
+            this.toggle()
+            this.$emit('onPress', index)
         }
     }
 
@@ -91,7 +120,12 @@ export default {
         background: #eee;
     }
 }
-
+.mui-actionsheet-title{
+    height:80/@rem;
+    line-height: 80/@rem;
+    .font-dpr(14px);
+    background: #f4f4f4;
+}
 .mui-actionsheet-item {
     position: relative;
     height: 100/@rem;
@@ -102,7 +136,32 @@ export default {
         background: #eee;
     }
 }
-
+.mui-actionsheet-share{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    background: #f4f4f4;
+}
+.mui-actionsheet-share-item{
+    width:120/@rem;
+    margin-left:25/@rem;
+    margin-bottom:20/@rem;
+    .icon{
+        width: 120/@rem;
+        height:120/@rem;
+        line-height: 120/@rem;
+         border-radius:20/@rem;
+        background: #fff;
+    }
+    .iconfont{
+        .font-dpr(30px);
+    }
+    .name{
+        padding-top:10/@rem;
+        .font-dpr(12px);
+    }
+}
 .mui-actionsheet-mask {
     width: 100%;
     height: 100%;
