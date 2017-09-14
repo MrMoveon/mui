@@ -13,6 +13,8 @@ import Badge from '@/example/pages/css-components/badge'
 import Cell from '@/example/pages/css-components/cell'
 import Spinner from '@/example/pages/css-components/spinner'
 import Search from '@/example/pages/css-components/search'
+import Popover from '@/example/pages/css-components/popover'
+import ActionSheet from '@/example/pages/css-components/actionsheet'
 // navigation
 import Header from '@/example/pages/navigation/header'
 import Segment from '@/example/pages/navigation/segment'
@@ -106,6 +108,16 @@ export default new Router({
                     path: 'search',
                     name: 'Search',
                     component: Search
+                },
+                {
+                    path: 'popover',
+                    name: 'Popover',
+                    component: Popover
+                },
+                {
+                    path: 'actionsheet',
+                    name: 'ActionSheet',
+                    component: ActionSheet
                 }
             ]
         },

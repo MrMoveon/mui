@@ -24,7 +24,7 @@
 
             <mui-wing-blank>
 				<div class="sub-title">
-					placeholder/cancelText
+					文本修改
 				</div>
 			</mui-wing-blank>
             <mui-white-space size='md'></mui-white-space>
@@ -83,10 +83,17 @@ export default {
             this.$refs.input.setFocus()
         },
         onSubmit (e) {
-            Toast({
-                msg: '搜索中:' + this.defaultValue,
-                position: 'bottom'
-            })
+            if (this.defaultValue) {
+                Toast({
+                    msg: '搜索中:' + this.defaultValue,
+                    position: 'bottom'
+                })
+            } else {
+                Toast({
+                    msg: '请输入内容',
+                    position: 'bottom'
+                })
+            }
         }
     }
 }

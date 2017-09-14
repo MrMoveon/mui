@@ -31,6 +31,8 @@
                     <mui-cell title="Cell 列表" :to="{name:'Cell'}"></mui-cell>
                     <mui-cell title="Spinner 加载器" :to="{name:'Spinner'}"></mui-cell>
                     <mui-cell title="Search 搜索" :to="{name:'Search'}"></mui-cell>
+                    <mui-cell title="Popover 气泡" :to="{name:'Popover'}"></mui-cell>
+                    <mui-cell title="ActionSheet 动作面板 " :to="{name:'ActionSheet'}"></mui-cell>
                     <div class="catgory-title">
                         js组件
                     </div>

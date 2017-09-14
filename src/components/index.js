@@ -14,6 +14,9 @@ import Button from './button'
 import Badge from './badge'
 import Spinner from './spinner'
 import Search from './search'
+import Popover from './popover'
+import ActionSheet from './actionsheet'
+
 // navigation
 import Header from './header'
 import Segment from './segment'
@@ -51,6 +54,8 @@ mui.install = (Vue) => {
     Vue.component(Badge.name, Badge)
     Vue.component(Spinner.name, Spinner)
     Vue.component(Search.name, Search)
+    Vue.component(Popover.name, Popover)
+    Vue.component(ActionSheet.name, ActionSheet)
 
     Vue.component(Header.name, Header)
     Vue.component(Segment.name, Segment)
@@ -86,6 +91,8 @@ export {
     Button,
     Spinner,
     Search,
+    Popover,
+    ActionSheet,
 
     Header,
     Segment,
