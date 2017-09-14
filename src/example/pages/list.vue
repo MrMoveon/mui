@@ -30,6 +30,7 @@
                     <mui-cell title="Badge 徽标" :to="{name:'Badge'}"></mui-cell>
                     <mui-cell title="Cell 列表" :to="{name:'Cell'}"></mui-cell>
                     <mui-cell title="Spinner 加载器" :to="{name:'Spinner'}"></mui-cell>
+                    <mui-cell title="Search 搜索" :to="{name:'Search'}"></mui-cell>
                     <div class="catgory-title">
                         js组件
                     </div>

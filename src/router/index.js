@@ -12,6 +12,7 @@ import Button from '@/example/pages/css-components/button'
 import Badge from '@/example/pages/css-components/badge'
 import Cell from '@/example/pages/css-components/cell'
 import Spinner from '@/example/pages/css-components/spinner'
+import Search from '@/example/pages/css-components/search'
 // navigation
 import Header from '@/example/pages/navigation/header'
 import Segment from '@/example/pages/navigation/segment'
@@ -100,6 +101,11 @@ export default new Router({
                     path: 'tabbar',
                     name: 'Tabbar',
                     component: Tabbar
+                },
+                {
+                    path: 'search',
+                    name: 'Search',
+                    component: Search
                 }
             ]
         },

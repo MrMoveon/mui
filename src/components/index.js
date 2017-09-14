@@ -13,6 +13,7 @@ import Icon from './icon'
 import Button from './button'
 import Badge from './badge'
 import Spinner from './spinner'
+import Search from './search'
 // navigation
 import Header from './header'
 import Segment from './segment'
@@ -48,8 +49,8 @@ mui.install = (Vue) => {
     Vue.component(Icon.name, Icon)
     Vue.component(Button.name, Button)
     Vue.component(Badge.name, Badge)
-
     Vue.component(Spinner.name, Spinner)
+    Vue.component(Search.name, Search)
 
     Vue.component(Header.name, Header)
     Vue.component(Segment.name, Segment)
@@ -84,6 +85,7 @@ export {
     Icon,
     Button,
     Spinner,
+    Search,
 
     Header,
     Segment,
