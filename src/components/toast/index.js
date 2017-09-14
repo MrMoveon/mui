@@ -20,9 +20,13 @@ let Toast = (options = {}) => {
     })
     return ToastInstance.vm
 }
-
-export default {
-    install: Vue => {
-        Vue.prototype.$Toast = Toast
-    }
+export {
+    Toast
 }
+export default Toast
+// export default {
+//     install: Vue => {
+//         Vue.prototype.$Toast = Toast
+//     }
+// }
+

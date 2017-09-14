@@ -26,6 +26,12 @@ import ScrollViewItem from './scroll-view-item'
 // 第三方组件
 import Lazyload from './lazyload'
 import Swiper from './swiper'
+// 弹框
+import Dialog from './dialog'
+import Toast from './toast'
+// rem布局
+import Flexible from './flexible'
+
 const mui = {}
 mui.install = (Vue) => {
     Vue.component(Page.name, Page)
@@ -89,6 +95,9 @@ export {
     Slide,
     SlideItem,
     ScrollView,
-    ScrollViewItem
+    ScrollViewItem,
+
+    Dialog,
+    Toast
 }
 export default mui

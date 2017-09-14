@@ -29,7 +29,7 @@ var merge = function (options) {
         Instance[item] = option[item]
     }
 }
-let dialog = {
+let Dialog = {
     /**
      * 弹出框
      * @param {*} options
@@ -59,4 +59,12 @@ let dialog = {
         Instance.visible = false
     }
 }
-export default dialog
+export {
+    Dialog
+}
+export default Dialog
+// export default {
+//     install: Vue => {
+//         Vue.prototype.Dialog = Dialog
+//     }
+// }

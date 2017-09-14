@@ -38,29 +38,30 @@
 
 <script>
 import back from '@/mixins/back'
+import {Toast} from '@/components'
 export default {
     name: 'indicator',
     mixins: [back],
     methods: {
         top () {
-            this.$Toast({
+            Toast({
                 msg: '顶部信息',
                 position: 'top',
                 duration: 2500
             })
         },
         middle () {
-            this.$Toast('中间信息')
+            Toast('中间信息')
         },
         bottom () {
-            this.$Toast({
+            Toast({
                 msg: '底部信息',
                 position: 'bottom',
                 duration: 2500
             })
         },
         custom () {
-            this.$Toast({
+            Toast({
                 msg: '自定义颜色',
                 position: 'top',
                 duration: 1000,
@@ -68,7 +69,7 @@ export default {
             })
         },
         customIcon () {
-            var toast = this.$Toast({
+            var toast = Toast({
                 msg: '自定义图标',
                 duration: 10000,
                 icon: 'iconfont icon-exclamationcircleo'
