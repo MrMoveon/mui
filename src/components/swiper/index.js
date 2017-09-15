@@ -1,3 +1,3 @@
-import './src/swiper.min.css'
+import './src/swiper.css'
 export { default } from './src/swiper.js'
 

@@ -29,11 +29,11 @@
 
 
         </mui-page-container>
-        <mui-actionsheet  :visible.sync="visible" :options="actionsheet" v-on:onPress="onPress">
+        <mui-actionsheet  :visible.sync="visible" :options="actionsheet" v-on:on-press="onPress">
             <mui-cell title="选择图片" :arrow="false"></mui-cell>
             <mui-cell title="拍照" :arrow="false"></mui-cell>
         </mui-actionsheet>
-        <mui-actionsheet title="分享到"  :visible.sync="visibleShare" :shareOptions="actionsheetShare" v-on:onPress="onPressShare">
+        <mui-actionsheet title="分享到"  :visible.sync="visibleShare" :share-options="actionsheetShare" v-on:on-press="onPressShare">
             <mui-cell title="选择图片" :arrow="false"></mui-cell>
             <mui-cell title="拍照" :arrow="false"></mui-cell>
         </mui-actionsheet>

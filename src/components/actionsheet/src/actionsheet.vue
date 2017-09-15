@@ -73,7 +73,7 @@ export default {
         },
         onPress (index) {
             this.toggle()
-            this.$emit('onPress', index)
+            this.$emit('on-press', index)
         }
     }
 

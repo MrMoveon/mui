@@ -1,3 +1,4 @@
+import '../assets/fonts/iconfont.css'
 // Layout
 import Page from './page'
 import PageContainer from './page-container'
@@ -75,6 +76,9 @@ mui.install = (Vue) => {
     })
 
     Vue.prototype.swiper = Swiper
+}
+if (typeof window !== 'undefined' && window.Vue) {
+    mui.install(window.Vue)
 }
 export {
     Page,
