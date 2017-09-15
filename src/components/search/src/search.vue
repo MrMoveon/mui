@@ -77,18 +77,18 @@ export default {
             this.focusClass = ''
         },
         clear (e) {
-            this.$emit('onClear', e)
+            this.$emit('on-clear', e)
             this.value = ''
             this.$refs.input.focus()
         },
         cancel (e) {
-            this.$emit('onCancel', e)
+            this.$emit('on-cancel', e)
             this.value = ''
             this.focusClass = ''
             this.$refs.input.blur()
         },
         submit (e) {
-            this.$emit('onSubmit', e)
+            this.$emit('on-submit', e)
             if (this.value) {
                 this.$refs.input.focus()
             }

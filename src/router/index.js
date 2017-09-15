@@ -26,6 +26,10 @@ import Scroll from '@/example/pages/swiper/scroll'
 import Indicator from '@/example/pages/js-components/indicator'
 import Toast from '@/example/pages/js-components/toast'
 import Dialog from '@/example/pages/js-components/dialog'
+// form
+import Switch from '@/example/pages/form/switch'
+import CheckList from '@/example/pages/form/check-list'
+import RadioList from '@/example/pages/form/radio-list'
 Vue.use(Router)
 
 export default new Router({
@@ -160,6 +164,30 @@ export default new Router({
                     path: 'dialog',
                     name: 'Dialog',
                     component: Dialog
+                }
+
+            ]
+        },
+        {
+            path: '/example/form',
+            name: 'form',
+            component: Layout,
+            redirect: '/example/form/switch',
+            children: [
+                {
+                    path: 'switch',
+                    name: 'Switch',
+                    component: Switch
+                },
+                {
+                    path: 'check-list',
+                    name: 'CheckList',
+                    component: CheckList
+                },
+                {
+                    path: 'radio-list',
+                    name: 'RadioList',
+                    component: RadioList
                 }
 
             ]

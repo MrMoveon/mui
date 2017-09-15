@@ -28,6 +28,10 @@ import Slide from './slide'
 import SlideItem from './slide-item'
 import ScrollView from './scroll-view'
 import ScrollViewItem from './scroll-view-item'
+// form
+import Switch from './switch'
+import CheckList from './check-list'
+import RadioList from './radio-list'
 // 第三方组件
 import Lazyload from './lazyload'
 import Swiper from './swiper'
@@ -67,6 +71,11 @@ mui.install = (Vue) => {
     Vue.component(SlideItem.name, SlideItem)
     Vue.component(ScrollView.name, ScrollView)
     Vue.component(ScrollViewItem.name, ScrollViewItem)
+
+    Vue.component(Switch.name, Switch)
+    Vue.component(CheckList.name, CheckList)
+    Vue.component(RadioList.name, RadioList)
+
     // 使用vue-lazyload插件，
     Vue.use(Lazyload, {
         preLoad: 1.3,
@@ -109,6 +118,10 @@ export {
     SlideItem,
     ScrollView,
     ScrollViewItem,
+
+    Switch,
+    CheckList,
+    RadioList,
 
     Dialog,
     Toast

@@ -28,7 +28,7 @@
 				</div>
 			</mui-wing-blank>
             <mui-white-space size='md'></mui-white-space>
-            <mui-search placeholder="请输入查询的信息" cancelText="放弃"></mui-search>
+            <mui-search placeholder="请输入查询的信息" cancel-text="放弃"></mui-search>
 
             <mui-wing-blank>
 				<div class="sub-title">
@@ -36,7 +36,7 @@
 				</div>
 			</mui-wing-blank>
             <mui-white-space size='md'></mui-white-space>
-            <mui-search placeholder="search" :defaultValue.sync="defaultValue" showSearchButton v-on:onSubmit="onSubmit"></mui-search>
+            <mui-search placeholder="search" :default-value.sync="defaultValue" show-search-button v-on:on-submit="onSubmit"></mui-search>
 
              <mui-wing-blank>
 				<div class="sub-title">
@@ -44,7 +44,7 @@
 				</div>
 			</mui-wing-blank>
             <mui-white-space size='md'></mui-white-space>
-            <mui-search ref="input" v-on:onClear="onClear" v-on:onCancel="onCancel" defaultValue="mui+vue"></mui-search>
+            <mui-search ref="input" v-on:on-clear="onClear" v-on:on-cancel="onCancel" default-value="mui+vue"></mui-search>
             <mui-white-space size='lg'></mui-white-space>
              <mui-wing-blank size="lg">
 				 <mui-button @click="setFocus"  size="large">获取焦点</mui-button>
