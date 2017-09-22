@@ -23,6 +23,7 @@
                     </div>
                     <mui-cell title="Slide 幻灯片切换" :to="{name:'Slide'}"></mui-cell>
                     <mui-cell title="ScrollView 视图滚动" :to="{name:'Scroll'}"></mui-cell>
+                    <mui-cell title="Loadmore 加载更多" :to="{name:'Loadmore'}"></mui-cell>
                     <div class="catgory-title">
                         css组件
                     </div>

@@ -54,7 +54,10 @@ export default {
   .@{name}spinner--normal{
       width:80/@rem;
       height:80/@rem;
-      
+  }
+  .@{name}spinner--sm{
+      width:60/@rem;
+      height:60/@rem;
   }
 }
 </style>
