@@ -45,6 +45,9 @@ export default {
             this.initScrollview()
         }, 20)
     },
+    beforeDestroy () {
+        this['scrollview' + this.name].destroy(false)
+    },
     methods: {
         initScrollview () {
             this['scrollview' + this.name] = new Swiper('#' + this.name, {
@@ -127,5 +130,13 @@ export default {
 .mui-scrollview {
     width: 10rem;
     height: 100%;
+}
+.swiper-container-vertical > .swiper-scrollbar{
+    width: 5/@rem;
+    right:3/@rem;
+}
+.swiper-scrollbar{
+    background: transparent;
+    
 }
 </style>
