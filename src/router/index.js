@@ -23,6 +23,7 @@ import Tabbar from '@/example/pages/navigation/tabbar'
 import Slide from '@/example/pages/swiper/slide'
 import Scroll from '@/example/pages/swiper/scroll'
 import Loadmore from '@/example/pages/swiper/loadmore'
+import Picker from '@/example/pages/swiper/picker'
 
 // js
 import Indicator from '@/example/pages/js-components/indicator'
@@ -147,6 +148,11 @@ export default new Router({
                     path: 'loadmore',
                     name: 'Loadmore',
                     component: Loadmore
+                },
+                {
+                    path: 'picker',
+                    name: 'Picker',
+                    component: Picker
                 }
 
             ]

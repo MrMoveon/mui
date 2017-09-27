@@ -29,6 +29,7 @@ import SlideItem from './slide-item'
 import ScrollView from './scroll-view'
 import ScrollViewItem from './scroll-view-item'
 import Loadmore from './loadmore'
+import Picker from './picker'
 // form
 import Switch from './switch'
 import CheckList from './check-list'
@@ -74,6 +75,7 @@ mui.install = (Vue) => {
     Vue.component(ScrollView.name, ScrollView)
     Vue.component(ScrollViewItem.name, ScrollViewItem)
     Vue.component(Loadmore.name, Loadmore)
+    Vue.component(Picker.name, Picker)
 
     Vue.component(Switch.name, Switch)
     Vue.component(CheckList.name, CheckList)
@@ -122,6 +124,7 @@ export {
     ScrollView,
     ScrollViewItem,
     Loadmore,
+    Picker,
 
     Switch,
     CheckList,
