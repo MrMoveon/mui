@@ -105,6 +105,7 @@ export default {
                 vm['muiSwiperPicker' + i] = new Swiper('.mui-swiper-picker' + i, {
                     direction: 'vertical',
                     slidesPerView: 7,
+                    slideToClickedSlide: true,
                     observer: true,
                     observeParents: true,
                     centeredSlides: true,
@@ -269,6 +270,7 @@ export default {
             border-bottom: 1px solid #e8e8e8;
             z-index: 2;
             user-select:none;
+            pointer-events:none;
         }
         &:after{
             content: '';
@@ -282,6 +284,7 @@ export default {
             border-top: 1px solid #e8e8e8;
             z-index: 2;
             user-select:none;
+            pointer-events:none;
         }
         .swiper-slide{
             display: flex;
