@@ -69,7 +69,7 @@ export default {
             this.actionsheet = !this.actionsheet
             setTimeout(() => {
                 this.$emit('update:visible', false)
-            }, 300)
+            }, 100)
         },
         onPress (index) {
             this.toggle()

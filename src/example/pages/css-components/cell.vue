@@ -1,6 +1,6 @@
 <template>
     <mui-page>
-        <mui-header mode='light' fixed title="Spinner 加载器">
+        <mui-header mode='light' fixed title="Cell 列表">
             <mui-button icon="arrowleft" slot="left" @click="back">返回</mui-button>
         </mui-header>
         <mui-page-container>

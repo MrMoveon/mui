@@ -1,13 +1,12 @@
 <template>
     <transition name="picker-fade">
     <div class="mui-picker" v-if="visible">
-        <transition name="picker-move">
-        <div class="mui-picker-wrap" v-if="visible">
+        
+        <div class="mui-picker-wrap" :class="{'show':pickerVisible}">
             <div class="mui-picker-buttons">
                 <span class="dismissText"@click="onDismiss">{{dismissText}}</span>
                 <span class="title">{{title}}</span>
                 <span class="okText" @click="onOk">{{okText}}</span>
-                
             </div>
             <div class="mui-picker-inner">
                 <div class="swiper-container mui-swiper-picker" :class="'mui-swiper-picker'+index" v-for="(col,index) in cols" :key="index">
@@ -22,7 +21,7 @@
                             <div class="swiper-slide" v-for="(item,thirdIndex) in data[pickerIndex0].children[pickerIndex1].children"  :key="thirdIndex">{{item.text}}</div>
                         </template>
                     </div>
-                    <div class="swiper-wrapper" else>
+                    <div class="swiper-wrapper" v-if="!cascade">
                         <template v-if="index===0">
                             <div class="swiper-slide" v-for="(item,firstIndex) in data[0]" :key="firstIndex">{{item.text}}</div>
                         </template>
@@ -36,8 +35,8 @@
                 </div>
             </div>
         </div>
-        </transition>
-        <div class="mui-mask"></div>
+        
+        <div class="mui-mask" @click="toggle"></div>
         
     </div>
     </transition>
@@ -78,16 +77,17 @@ export default {
         return {
             pickerIndex0: 0,
             pickerIndex1: 0,
-            pickerIndex2: 0
+            pickerIndex2: 0,
+            pickerVisible: this.visible
         }
     },
     watch: {
         visible (val) {
             if (val === true) {
-                console.log(val)
                 setTimeout(() => {
                     this.initPicker()
-                }, 300)
+                    this.pickerVisible = true
+                }, 100)
             }
         }
     },
@@ -96,22 +96,27 @@ export default {
     },
     methods: {
         initPicker () {
+            this.pickerIndex0 = 0
+            this.pickerIndex1 = 0
+            this.pickerIndex2 = 0
+            this.pickerSwitch = true
             var vm = this
             for (let i = 0; i < this.cols; i++) {
                 vm['muiSwiperPicker' + i] = new Swiper('.mui-swiper-picker' + i, {
                     direction: 'vertical',
                     slidesPerView: 7,
                     observer: true,
+                    observeParents: true,
+                    centeredSlides: true,
                     freeMode: true,
-                    freeModeSticky: true,
-                    centeredSlides: true
+                    freeModeSticky: true
 
                 })
+                vm['muiSwiperPicker' + i].update()
             }
             if (vm.cascade) { // 数据联动
                 vm.muiSwiperPicker0.on('TransitionEnd', function (swiper) {
                     vm.pickerIndex0 = swiper.activeIndex
-
                     if (vm.muiSwiperPicker1) {
                         vm.muiSwiperPicker1.slideTo(0, 0, false)
                         vm.pickerIndex1 = 0
@@ -123,11 +128,8 @@ export default {
                 })
                 vm.muiSwiperPicker1 && vm.muiSwiperPicker1.on('TransitionEnd', function (swiper) {
                     vm.pickerIndex1 = swiper.activeIndex
-
-                    if (vm.muiSwiperPicker2) {
-                        vm.muiSwiperPicker2.slideTo(0, 0, false)
-                        vm.pickerIndex2 = 0
-                    }
+                    vm.muiSwiperPicker2 && vm.muiSwiperPicker2.slideTo(0, 0, false)
+                    vm.pickerIndex2 = 0
                 })
                 vm.muiSwiperPicker2 && vm.muiSwiperPicker2.on('TransitionEnd', function (swiper) {
                     vm.pickerIndex2 = swiper.activeIndex
@@ -193,11 +195,21 @@ export default {
             return result
         },
         onDismiss (e) {
-            this.$emit('update:visible', false)
+            this.toggle()
             this.$emit('on-dismiss', e)
         },
         onOk (e) {
+            this.toggle()
             this.$emit('on-ok', e, this.getValue())
+        },
+        toggle () {
+            if (this.pickerSwitch) {
+                this.pickerSwitch = false
+                this.pickerVisible = !this.pickerVisible
+                setTimeout(() => {
+                    this.$emit('update:visible', false)
+                }, 300)
+            }
         }
     }
 }
@@ -232,6 +244,10 @@ export default {
     width: 100%;
     height: 560/@rem;
     transition: all .3s ease;
+    transform: translate3d(0,100%,0);
+    &.show{
+        transform: translate3d(0,0,0);
+    }
 }
 
 .mui-picker-inner {
@@ -269,7 +285,7 @@ export default {
         }
         .swiper-slide{
             display: flex;
-            height: 80/@rem;
+           height: 80/@rem;
             justify-content: center;
             align-items: center;
             .font-dpr(14px);
@@ -304,8 +320,5 @@ export default {
     opacity: 0
 }
 
-.picker-move-enter,
-.picker-move-leave-to {
-    transform: translateY(100%)
-}
+
 </style>

@@ -6,21 +6,27 @@
         <mui-page-container>
             <mui-wing-blank>
 				<div class="sub-title">
-					一级
+					基本
 				</div>
 			</mui-wing-blank>
             <mui-white-space></mui-white-space>
            <mui-cell-group>
-               <mui-cell title="地区选择" value='请选择' v-on:on-press="onPress01"></mui-cell>
+               <mui-cell title="地区选择" :value='value1' v-on:on-press="onPress01"></mui-cell>
+               <mui-cell title="季节选择(不联动)" :value='value2' v-on:on-press="onPress02"></mui-cell>
+               <mui-cell title="地区选择(联动)" :value='value3' v-on:on-press="onPress03"></mui-cell>
+                <mui-cell title="地区选择（三级）" :value='value4' v-on:on-press="onPress04"></mui-cell>
            </mui-cell-group>
-           <!-- 3级联动 -->
-           <!-- <mui-picker title="地区选择" :data="cityData" :cols='3' cascade v-on:on-dismiss="onDismiss" v-on:on-ok="onOk"></mui-picker> -->
-           <!-- 2级联动 -->
-           <!-- <mui-picker title="地区选择" :data="cityData2" :cols='2' cascade v-on:on-dismiss="onDismiss" v-on:on-ok="onOk"></mui-picker>  -->
+          
+          
            <!-- 1级不联动 -->
-            <mui-picker title="地区选择" :visible.sync="visible" :data="name" :cols='1' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk"></mui-picker>
+            <mui-picker title="地区选择" :visible.sync="visible1" :data="name" :cols='1' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk1"></mui-picker>
             <!-- 2级不联动 -->
-            <!-- <mui-picker title="地区选择" :data="seasons" :cols='2' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk"></mui-picker> -->
+            <mui-picker title="季节选择" :visible.sync="visible2" :data="seasons" :cols='2' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk2"></mui-picker>
+            <!-- 2级联动 -->
+           <mui-picker title="地区选择" :visible.sync="visible3" :data="cityData2" :cols='2' cascade v-on:on-dismiss="onDismiss" v-on:on-ok="onOk3"></mui-picker>
+            <!-- 3级联动 -->
+           <mui-picker title="地区选择" :visible.sync="visible4" :data="cityData" :cols='3' cascade v-on:on-dismiss="onDismiss" v-on:on-ok="onOk4"></mui-picker>
+           
         </mui-page-container>
     </mui-page>
 </template>
@@ -34,7 +40,14 @@ export default {
     mixins: [back],
     data () {
         return {
-            visible: false,
+            visible1: false,
+            visible2: false,
+            visible3: false,
+            visible4: false,
+            value1: '请选择',
+            value2: '请选择',
+            value3: '请选择',
+            value4: '请选择',
             cityData: cityData3,
             cityData2: cityData2,
             name: [
@@ -89,13 +102,31 @@ export default {
     },
     methods: {
         onPress01 () {
-            this.visible = true
+            this.visible1 = true
+        },
+        onPress02 () {
+            this.visible2 = true
+        },
+        onPress03 () {
+            this.visible3 = true
+        },
+        onPress04 () {
+            this.visible4 = true
         },
         onDismiss (e) {
             console.log('取消')
         },
-        onOk (e, value) {
-            console.log(value)
+        onOk1 (e, item) {
+            this.value1 = item[0].text
+        },
+        onOk2 (e, item) {
+            this.value2 = item[0].text + ',' + item[1].text
+        },
+        onOk3 (e, item) {
+            this.value3 = item[0].text + ',' + item[1].text
+        },
+        onOk4 (e, item) {
+            this.value4 = item[0].text + ',' + item[1].text + ',' + item[2].text
         }
     }
 }

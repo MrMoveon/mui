@@ -40,7 +40,7 @@ export default {
             this.popover = false
             setTimeout(() => {
                 this.$emit('update:visible', false)
-            }, 300)
+            }, 100)
         }
     }
 
