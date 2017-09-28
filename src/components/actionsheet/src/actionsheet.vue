@@ -54,7 +54,8 @@ export default {
     },
     data () {
         return {
-            actionsheet: this.visible
+            actionsheet: this.visible,
+            actionsheetSwitch: true
         }
     },
     watch: {
@@ -66,10 +67,13 @@ export default {
     },
     methods: {
         toggle () {
-            this.actionsheet = !this.actionsheet
-            setTimeout(() => {
-                this.$emit('update:visible', false)
-            }, 100)
+            if (this.actionsheetSwitch) {
+                this.actionsheetSwitch = false
+                this.actionsheet = !this.actionsheet
+                setTimeout(() => {
+                    this.$emit('update:visible', false)
+                }, 100)
+            }
         },
         onPress (index) {
             this.toggle()

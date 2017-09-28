@@ -22,9 +22,9 @@
                     :selected="config.selectedIndex===index" 
                     :tintColor="config.tintColor" 
                     :unselectedTintColor="config.unselectedTintColor"
-                    :dot="item.dot"
                     :badge="item.badge"
                     v-on:onPress="selectedTabbar" 
+                    :dot="item.dot"
                 >
                 </mui-tabbar-item>
             </mui-tabbar>

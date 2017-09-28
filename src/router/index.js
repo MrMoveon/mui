@@ -24,7 +24,8 @@ import Slide from '@/example/pages/swiper/slide'
 import Scroll from '@/example/pages/swiper/scroll'
 import Loadmore from '@/example/pages/swiper/loadmore'
 import Picker from '@/example/pages/swiper/picker'
-
+// feedback
+import Progress from '@/example/pages/feedback/progress'
 // js
 import Indicator from '@/example/pages/js-components/indicator'
 import Toast from '@/example/pages/js-components/toast'
@@ -155,6 +156,19 @@ export default new Router({
                     component: Picker
                 }
 
+            ]
+        },
+        {
+            path: '/example/feedback',
+            name: 'feedback',
+            component: Layout,
+            redirect: '/example/feedback/progress',
+            children: [
+                {
+                    path: 'progress',
+                    name: 'Progress',
+                    component: Progress
+                }
             ]
         },
         {

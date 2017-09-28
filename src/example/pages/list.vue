@@ -36,6 +36,10 @@
                     <mui-cell title="Popover 气泡" :to="{name:'Popover'}"></mui-cell>
                     <mui-cell title="ActionSheet 动作面板 " :to="{name:'ActionSheet'}"></mui-cell>
                     <div class="catgory-title">
+                        触摸反馈
+                    </div>
+                    <mui-cell title="Progress 进度条" :to="{name:'Progress'}"></mui-cell>
+                    <div class="catgory-title">
                         js组件
                     </div>
                     <mui-cell title="Indicator 指示器" :to="{name:'Indicator'}"></mui-cell>

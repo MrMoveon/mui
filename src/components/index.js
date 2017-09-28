@@ -30,6 +30,7 @@ import ScrollView from './scroll-view'
 import ScrollViewItem from './scroll-view-item'
 import Loadmore from './loadmore'
 import Picker from './picker'
+import Progress from './progress'
 // form
 import Switch from './switch'
 import CheckList from './check-list'
@@ -76,6 +77,7 @@ mui.install = (Vue) => {
     Vue.component(ScrollViewItem.name, ScrollViewItem)
     Vue.component(Loadmore.name, Loadmore)
     Vue.component(Picker.name, Picker)
+    Vue.component(Progress.name, Progress)
 
     Vue.component(Switch.name, Switch)
     Vue.component(CheckList.name, CheckList)
@@ -125,6 +127,7 @@ export {
     ScrollViewItem,
     Loadmore,
     Picker,
+    Progress,
 
     Switch,
     CheckList,
