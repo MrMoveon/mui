@@ -6,7 +6,7 @@ import Flex from './flex'
 import FlexItem from './flex-item'
 import WingBlank from './wing-blank'
 import WhiteSpace from './white-space'
-// css组件
+// 基础组件
 import CellGroup from './cell-group'
 import Cell from './cell'
 import MediaCell from './media-cell'
@@ -15,9 +15,7 @@ import Button from './button'
 import Badge from './badge'
 import Spinner from './spinner'
 import Search from './search'
-import Popover from './popover'
-import ActionSheet from './actionsheet'
-
+import Stepper from './stepper'
 // navigation
 import Header from './header'
 import Segment from './segment'
@@ -29,8 +27,13 @@ import SlideItem from './slide-item'
 import ScrollView from './scroll-view'
 import ScrollViewItem from './scroll-view-item'
 import Loadmore from './loadmore'
+// feedback
+import Popover from './popover'
+import ActionSheet from './actionsheet'
 import Picker from './picker'
 import Progress from './progress'
+import Dialog from './dialog'
+import Toast from './toast'
 // form
 import Switch from './switch'
 import CheckList from './check-list'
@@ -39,9 +42,6 @@ import RadioList from './radio-list'
 import Lazyload from './lazyload'
 import Swiper from './swiper'
 
-// 弹框
-import Dialog from './dialog'
-import Toast from './toast'
 // rem布局
 import Flexible from './flexible'
 
@@ -63,8 +63,7 @@ mui.install = (Vue) => {
     Vue.component(Badge.name, Badge)
     Vue.component(Spinner.name, Spinner)
     Vue.component(Search.name, Search)
-    Vue.component(Popover.name, Popover)
-    Vue.component(ActionSheet.name, ActionSheet)
+    Vue.component(Stepper.name, Stepper)
 
     Vue.component(Header.name, Header)
     Vue.component(Segment.name, Segment)
@@ -76,6 +75,9 @@ mui.install = (Vue) => {
     Vue.component(ScrollView.name, ScrollView)
     Vue.component(ScrollViewItem.name, ScrollViewItem)
     Vue.component(Loadmore.name, Loadmore)
+
+    Vue.component(Popover.name, Popover)
+    Vue.component(ActionSheet.name, ActionSheet)
     Vue.component(Picker.name, Picker)
     Vue.component(Progress.name, Progress)
 
@@ -111,8 +113,7 @@ export {
     Button,
     Spinner,
     Search,
-    Popover,
-    ActionSheet,
+    Stepper,
 
     Header,
     Segment,
@@ -126,14 +127,17 @@ export {
     ScrollView,
     ScrollViewItem,
     Loadmore,
+
     Picker,
     Progress,
+    Popover,
+    ActionSheet,
+    Dialog,
+    Toast,
 
     Switch,
     CheckList,
-    RadioList,
+    RadioList
 
-    Dialog,
-    Toast
 }
 export default mui

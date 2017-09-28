@@ -35,6 +35,7 @@
 import back from '@/mixins/back'
 import cityData3 from './data/cityData-3'
 import cityData2 from './data/cityData'
+
 export default {
     name: 'picker',
     mixins: [back],
