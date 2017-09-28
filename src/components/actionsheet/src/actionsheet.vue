@@ -62,6 +62,7 @@ export default {
         visible (val) {
             if (val) {
                 this.actionsheet = true
+                this.actionsheetSwitch = true
             }
         }
     },
