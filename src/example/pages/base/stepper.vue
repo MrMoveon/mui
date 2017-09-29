@@ -13,7 +13,7 @@
 			</mui-wing-blank>
             <mui-white-space size='md'></mui-white-space>
             <mui-wing-blank size="lg">
-               <mui-stepper></mui-stepper>
+               <mui-stepper  v-model="stepper1"></mui-stepper>
             </mui-wing-blank >
             
             <mui-wing-blank>
@@ -23,7 +23,7 @@
 			</mui-wing-blank>
             <mui-white-space size='md'></mui-white-space>
             <mui-wing-blank size="lg">
-               123
+               <mui-stepper disabled></mui-stepper>
             </mui-wing-blank >
             
         </mui-page-container>
@@ -33,8 +33,13 @@
 <script>
 import back from '@/mixins/back'
 export default {
-    name: 'button',
-    mixins: [back]
+    name: 'stepper',
+    mixins: [back],
+    data () {
+        return {
+            stepper1: 5
+        }
+    }
 }
 </script>
 
