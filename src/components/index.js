@@ -38,6 +38,7 @@ import Toast from './toast'
 import Switch from './switch'
 import CheckList from './check-list'
 import RadioList from './radio-list'
+import Field from './field'
 // 第三方组件
 import Lazyload from './lazyload'
 import Swiper from './swiper'
@@ -84,7 +85,7 @@ mui.install = (Vue) => {
     Vue.component(Switch.name, Switch)
     Vue.component(CheckList.name, CheckList)
     Vue.component(RadioList.name, RadioList)
-
+    Vue.component(Field.name, Field)
     // 使用vue-lazyload插件，
     Vue.use(Lazyload, {
         preLoad: 1.3,
@@ -137,7 +138,8 @@ export {
 
     Switch,
     CheckList,
-    RadioList
+    RadioList,
+    Field
 
 }
 export default mui

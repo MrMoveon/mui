@@ -53,6 +53,7 @@
                     <mui-cell title="Switch 开关" :to="{name:'Switch'}"></mui-cell>
                     <mui-cell title="CheckList 多选" :to="{name:'CheckList'}"></mui-cell>
                     <mui-cell title="RadioList 多选" :to="{name:'RadioList'}"></mui-cell>
+                    <mui-cell title="Field 输入框" :to="{name:'Field'}"></mui-cell>
                 </mui-scroll-view-item>
             </mui-scroll-view>
             

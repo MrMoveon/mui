@@ -36,6 +36,8 @@ import Picker from '@/example/pages/feedback/picker'
 import Switch from '@/example/pages/form/switch'
 import CheckList from '@/example/pages/form/check-list'
 import RadioList from '@/example/pages/form/radio-list'
+import Field from '@/example/pages/form/field'
+
 Vue.use(Router)
 
 export default new Router({
@@ -223,6 +225,11 @@ export default new Router({
                     path: 'radio-list',
                     name: 'RadioList',
                     component: RadioList
+                },
+                {
+                    path: 'field',
+                    name: 'Field',
+                    component: Field
                 }
 
             ]
