@@ -31,6 +31,7 @@ import Loadmore from './loadmore'
 import Popover from './popover'
 import ActionSheet from './actionsheet'
 import Picker from './picker'
+import DtPicker from './dtpicker'
 import Progress from './progress'
 import Dialog from './dialog'
 import Toast from './toast'
@@ -80,6 +81,7 @@ mui.install = (Vue) => {
     Vue.component(Popover.name, Popover)
     Vue.component(ActionSheet.name, ActionSheet)
     Vue.component(Picker.name, Picker)
+    Vue.component(DtPicker.name, DtPicker)
     Vue.component(Progress.name, Progress)
 
     Vue.component(Switch.name, Switch)
@@ -130,6 +132,7 @@ export {
     Loadmore,
 
     Picker,
+    DtPicker,
     Progress,
     Popover,
     ActionSheet,

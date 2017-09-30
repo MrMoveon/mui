@@ -46,7 +46,8 @@
                     <mui-cell title="Dialog 弹出层" :to="{name:'Dialog'}"></mui-cell>
                     <mui-cell title="Popover 气泡" :to="{name:'Popover'}"></mui-cell>
                     <mui-cell title="ActionSheet 动作面板 " :to="{name:'ActionSheet'}"></mui-cell>
-                     <mui-cell title="Picker 选择器" :to="{name:'Picker'}"></mui-cell>
+                    <mui-cell title="Picker 选择器" :to="{name:'Picker'}"></mui-cell>
+                    <mui-cell title="DtPicker 选择器" :to="{name:'DtPicker'}"></mui-cell>
                     <div class="catgory-title">
                         表单组件
                     </div>

@@ -32,6 +32,7 @@ import Dialog from '@/example/pages/feedback/dialog'
 import Popover from '@/example/pages/feedback/popover'
 import ActionSheet from '@/example/pages/feedback/actionsheet'
 import Picker from '@/example/pages/feedback/picker'
+import DtPicker from '@/example/pages/feedback/dtpicker'
 // form
 import Switch from '@/example/pages/form/switch'
 import CheckList from '@/example/pages/form/check-list'
@@ -202,7 +203,13 @@ export default new Router({
                     path: 'picker',
                     name: 'Picker',
                     component: Picker
+                },
+                {
+                    path: 'dtPicker',
+                    name: 'DtPicker',
+                    component: DtPicker
                 }
+
             ]
         },
         {
