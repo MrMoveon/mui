@@ -45,6 +45,12 @@
 export default {
     name: 'mui-picker',
     props: {
+        value: {
+            type: Object,
+            default: function () {
+                return {}
+            }
+        },
         visible: Boolean,
         okText: {
             type: String,
@@ -141,6 +147,9 @@ export default {
                     vm.muiSwiperPicker0.on('TransitionEnd', function (swiper) {
                         vm.pickerIndex0 = swiper.activeIndex
                     })
+                    if (vm.value) {
+                        vm.setValue(vm.value, 200)
+                    }
                 } else if (this.cols === 2) {
                     vm.muiSwiperPicker0.on('TransitionEnd', function (swiper) {
                         vm.pickerIndex0 = swiper.activeIndex
@@ -195,12 +204,53 @@ export default {
             }
             return result
         },
+        setValue (val, time) {
+            var vm = this
+            setTimeout(() => {
+                if (vm.cascade) {
+                    for (let i = 0; i < vm.cols; i++) {
+                        switch (i) {
+                        case 0:
+
+                            break
+                        case 1:
+
+                            break
+                        case 2:
+
+                            break
+                        }
+                    }
+                } else {
+                    // 当为一级的时候
+                    if (vm.data.length === 1) {
+                        vm.data[0].map((item, index) => {
+                            if (item.value === String(val.value)) {
+                                // 设置默认值的索引
+                                vm.pickerIndex0 = index
+                                // 跳转到默认值
+                                return vm['muiSwiperPicker0'].slideTo(index, 0, false)
+                            }
+                        })
+                    }
+                    if (vm.data.length === 2) {
+
+                    }
+                    if (vm.data.length === 3) {
+
+                    }
+                }
+            }, time)
+        },
         onDismiss (e) {
             this.toggle()
             this.$emit('on-dismiss', e)
         },
         onOk (e) {
             this.toggle()
+            var item = this.getValue()
+            console.log(item[0])
+            this.$emit('update:value', item[0])
             this.$emit('on-ok', e, this.getValue())
         },
         toggle () {

@@ -19,7 +19,7 @@
           
           
            <!-- 1级不联动 -->
-            <mui-picker title="地区选择" :visible.sync="visible1" :data="name" :cols='1' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk1"></mui-picker>
+            <mui-picker title="地区选择" ref="area01" :value.sync="dfValue1" :visible.sync="visible1" :data="name" :cols='1' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk1"></mui-picker>
             <!-- 2级不联动 -->
             <mui-picker title="季节选择" :visible.sync="visible2" :data="seasons" :cols='2' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk2"></mui-picker>
             <!-- 2级联动 -->
@@ -46,6 +46,10 @@ export default {
             visible3: false,
             visible4: false,
             value1: '请选择',
+            dfValue1: {
+                value: '130500',
+                text: '邢台市'
+            },
             value2: '请选择',
             value3: '请选择',
             value4: '请选择',
@@ -98,12 +102,35 @@ export default {
                         text: '夏'
                     }
                 ]
+            ],
+            defaultSeasons: [
+                [
+                    {
+                        value: '春',
+                        text: '春'
+                    },
+                    {
+                        value: '夏',
+                        text: '夏'
+                    }
+                ]
             ]
+        }
+    },
+    mounted () {
+        if (this.dfValue1) {
+            this.name[0].map((item, index) => {
+              //  console.log(this.dfValue1.value)
+                if (item.value === String(this.dfValue1.value)) {
+                    this.value1 = item.text
+                }
+            })
         }
     },
     methods: {
         onPress01 () {
             this.visible1 = true
+           // this.$refs.area01.setValue('130500', 200)
         },
         onPress02 () {
             this.visible2 = true
