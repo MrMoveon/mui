@@ -39,22 +39,22 @@
                 <mui-cell title="月份选择month" :value='value6' v-on:on-press="onPress06"></mui-cell>
                 <mui-cell title="时间选择hour" :value='value7' v-on:on-press="onPress07"></mui-cell>
             </mui-cell-group>
-            <mui-wing-blank color="#f8f8f8">
+            <!-- <mui-wing-blank color="#f8f8f8">
                 <div class="sub-title">
                     自定义数据
                 </div>
             </mui-wing-blank>
             <mui-cell-group>
                 <mui-cell title="自定义数据" :value='value8' v-on:on-press="onPress08"></mui-cell>
-            </mui-cell-group>
+            </mui-cell-group> -->
             <mui-dtpicker title="日期选择" :visible.sync="visible1" v-on:on-dismiss="onDismiss" v-on:on-ok="onOk1"></mui-dtpicker>
             <mui-dtpicker title="日期选择"  :visible.sync="visible2" :beginYear="1998" :endYear="2030" v-on:on-dismiss="onDismiss" v-on:on-ok="onOk2"></mui-dtpicker>
-            <mui-dtpicker title="日期选择" :visible.sync="visible3" :value="dtValue3" :beginYear="1998" :endYear="2030" v-on:on-dismiss="onDismiss" v-on:on-ok="onOk3"></mui-dtpicker>
+            <mui-dtpicker title="日期选择" :visible.sync="visible3" :value.sync="dtValue3" :beginYear="1998" :endYear="2030" v-on:on-dismiss="onDismiss" v-on:on-ok="onOk3"></mui-dtpicker>
             <mui-dtpicker title="日期选择" :visible.sync="visible4" type='date' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk4"></mui-dtpicker>
             <mui-dtpicker title="时间选择" :visible.sync="visible5" type='time' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk5"></mui-dtpicker>
             <mui-dtpicker title="时间选择" :visible.sync="visible6" type='month'  :isCurrenttime='false' v-on:on-dismiss="onDismiss" v-on:on-ok="onOk6"></mui-dtpicker>
             <mui-dtpicker title="时间选择" :visible.sync="visible7" type='hour'  v-on:on-dismiss="onDismiss" v-on:on-ok="onOk7"></mui-dtpicker>
-            <mui-dtpicker title="时段选择" :visible.sync="visible8" type='hour' :customData="{h:['上午','下午','晚上']}" :labels="['年', '月', '日', '时段','分']" v-on:on-dismiss="onDismiss" v-on:on-ok="onOk8" ></mui-dtpicker>
+            <!-- <mui-dtpicker title="时段选择" :visible.sync="visible8" type='hour' :customData="{h:['上午','下午','晚上']}" :labels="['年', '月', '日', '时段','分']" v-on:on-dismiss="onDismiss" v-on:on-ok="onOk8" ></mui-dtpicker> -->
         </mui-page-container>
     </mui-page>
 </template>
@@ -83,7 +83,7 @@ export default {
             value6: '请选择',
             value7: '请选择',
             value8: '请选择',
-            dtValue3: '2015-10-10 10:10'
+            dtValue3: '2015-10-10'
 
         }
     },

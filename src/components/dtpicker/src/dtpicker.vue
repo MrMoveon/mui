@@ -187,10 +187,10 @@ export default {
                 break
             case 'hour':
                 num = 4
-
-                if (this.customData.h.length) {
-                    this.hourArea = this.customData.h
-                }
+                // 自定义hour
+                // if (this.customData.h.length) {
+                //     this.hourArea = this.customData.h
+                // }
 
                 newLable = [this.labels[0], this.labels[1], this.labels[2], this.labels[3]]
                 this.currentLabels = newLable
@@ -224,18 +224,17 @@ export default {
                     freeMode: true,
                     freeModeSticky: true,
                     onTransitionEnd: function (swiper) {
-                        console.log(i)
-                        if (vm.customData.h) {
-                           // swiper.slideTo(0, 0, false)
-                            return
-                        }
+                        // if (vm.customData.h) {
+                        //    // swiper.slideTo(0, 0, false)
+                        //     return
+                        // }
                         if (vm.dtonce) {
                             switch (vm.colLable[i]) {
                             case 'y':
                                 vm.currentYear = dateData[i][swiper.activeIndex]
                                 break
                             case 'm':
-                                vm.currentMonth = dateData[i][swiper.activeIndex]
+                                vm.currentMonth = String(parseInt(dateData[i][swiper.activeIndex]))
                                 break
                             case 'd':
                                 vm.currentDay = dateData[i][swiper.activeIndex]
@@ -250,11 +249,12 @@ export default {
                                 break
                             }
                         } else { // 打开的时候执行一次， 跳转到当前时间
-                            console.log(dateData[i])
                             var cDate
                             if (vm.value) {
                                 cDate = new Date(vm.value)
+
                                 vm.setDate(cDate, vm)
+                                console.log(cDate.getMonth())
                             }
                              // 不跳到当前日期
                             if (vm.isCurrenttime) {
@@ -282,10 +282,11 @@ export default {
                                 default:
                                     break
                                 }
-                            } else {
-                                cDate = new Date(vm.beginYear, 1, 1)
-                                vm.setDate(cDate, vm)
                             }
+                            // else {
+                            //     cDate = new Date(vm.beginYear, 1, 1)
+                            //     vm.setDate(cDate, vm)
+                            // }
                         }
                     }
 
@@ -307,7 +308,7 @@ export default {
          */
         setDate (cDate, vm) {
             vm.currentYear = cDate.getFullYear()
-            vm.currentMonth = cDate.getMonth()
+            vm.currentMonth = cDate.getMonth() + 1
             vm.currentDay = cDate.getDate()
             vm.currentHour = cDate.getHours()
             vm.currentMin = cDate.getMinutes()
@@ -350,6 +351,8 @@ export default {
         },
         onOk (e) {
             this.toggle()
+            var item = this.getValue()
+            this.$emit('update:value', item[0] + '-' + item[1] + '-' + item[2] + ' ' + item[3] + ':' + item[4])
             this.$emit('on-ok', e, this.getValue())
         },
         toggle () {
