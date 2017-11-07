@@ -4,6 +4,7 @@ import App from './App'
 import router from './router'
 import './assets/less/app.less'
 import mui from './components'
+
 Vue.use(mui)
 
 Vue.config.productionTip = false

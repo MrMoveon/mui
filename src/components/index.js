@@ -95,6 +95,7 @@ mui.install = (Vue) => {
         loading: require('../assets/logo.png'),
         attempt: 1
     })
+    Vue.use(Toast)
 
     Vue.prototype.swiper = Swiper
 }
