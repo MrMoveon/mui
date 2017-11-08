@@ -35,7 +35,6 @@
 
 <script>
 import back from '@/mixins/back'
-import {Toast} from '@/components'
 export default {
     name: 'tabbar',
     mixins: [back],
@@ -82,7 +81,7 @@ export default {
     methods: {
         selectedTabbar (e) {
             this.config.selectedIndex = e.index
-            Toast({
+            this.$Toast({
                 msg: '点击了- ' + e.index,
                 position: 'middle'
             })

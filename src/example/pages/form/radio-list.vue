@@ -25,7 +25,6 @@
 
 <script>
 import back from '@/mixins/back'
-import { Toast } from '@/components'
 export default {
     name: 'switch',
     mixins: [back],
@@ -74,7 +73,7 @@ export default {
     methods: {
         onChange () {
             setTimeout(() => {
-                Toast('改变了：' + this.value2)
+                this.$Toast('改变了：' + this.value2)
             }, 20)
         }
     }

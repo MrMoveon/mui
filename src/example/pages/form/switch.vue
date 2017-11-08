@@ -79,7 +79,7 @@
 
 <script>
 import back from '@/mixins/back'
-import {Toast} from '@/components'
+
 export default {
     name: 'switch',
     mixins: [back],
@@ -94,7 +94,7 @@ export default {
     },
     methods: {
         onChange () {
-            Toast('改变了：' + this.isChecked5)
+            this.$Toast('改变了：' + this.isChecked5)
         }
     }
 }

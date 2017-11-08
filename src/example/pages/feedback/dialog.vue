@@ -35,8 +35,6 @@
 <script>
 import back from '@/mixins/back'
 
-// import {Dialog, Toast} from '@/components'
-
 export default {
     name: 'dialog',
     mixins: [back],
