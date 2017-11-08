@@ -51,7 +51,7 @@ export default {
             this.$refs.loadmore.initScrollview()
             this.$refs.loadmore._pullup()
             this.$refs.loadmore._pulldown()
-        }, 20)
+        }, 600)
     },
     methods: {
         loadData (swiper) {

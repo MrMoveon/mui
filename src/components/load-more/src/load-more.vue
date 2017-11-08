@@ -1,5 +1,5 @@
 <template>
-    <div :id="name" class="swiper-container mui-scrollview loadmore-view" ref="loadmore">
+    <div :id="name" class="swiper-container  loadmore-view" ref="loadmore">
         <div class="swiper-wrapper" ref="wrapper">
             <div class="swiper-slide mui-view-items" style="height:auto"  ref="dom">
                 <div name="header" class="mui-renderHeader" ref="header">
