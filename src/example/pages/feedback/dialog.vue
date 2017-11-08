@@ -35,7 +35,7 @@
 <script>
 import back from '@/mixins/back'
 
-import {Dialog, Toast} from '@/components'
+// import {Dialog, Toast} from '@/components'
 
 export default {
     name: 'dialog',
@@ -43,32 +43,34 @@ export default {
     methods: {
         alert () {
            // this.Dialog.open('hello mui框架')
-            Dialog.open('hello mui框架')
+            this.$Dialog.open('hello mui框架')
         },
         alert2 () {
-            Dialog.open({
+            var vm = this
+            this.$Dialog.open({
                 text: 'hello mui框架',
                 callback (action) {
                     if (action) {
-                        Toast('点击了确定')
+                        vm.$Toast('点击了确定')
                     }
                 }
             })
         },
         alert3 () {
-            Dialog.open({
+            var vm = this
+            this.$Dialog.open({
                 title: '信息提示',
                 text: '您确定要删除么？',
                 showCancelButton: true,
                 callback (action) {
                     if (action === 'confirm') {
-                        Toast({
+                        vm.$Toast({
                             msg: '点击了确定',
                             position: 'bottom'
                         })
                     }
                     if (action === 'cancel') {
-                        Toast({
+                        vm.$Toast({
                             msg: '点击了取消',
                             position: 'bottom'
                         })
@@ -77,20 +79,21 @@ export default {
             })
         },
         alert4 () {
-            Dialog.open({
+            var vm = this
+            this.$Dialog.open({
                 text: 'hello mui框架',
                 showCancelButton: true,
                 maskClose: true,
                 maskOpacity: 0.4,
                 callback (action) {
                     if (action === 'confirm') {
-                        Toast({
+                        vm.$Toast({
                             msg: '点击了确定',
                             position: 'bottom'
                         })
                     }
                     if (action === 'cancel') {
-                        Toast({
+                        vm.$Toast({
                             msg: '点击了取消',
                             position: 'bottom'
                         })

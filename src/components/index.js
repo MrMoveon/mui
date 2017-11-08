@@ -26,7 +26,7 @@ import Slide from './slide'
 import SlideItem from './slide-item'
 import ScrollView from './scroll-view'
 import ScrollViewItem from './scroll-view-item'
-import Loadmore from './loadmore'
+import Loadmore from './load-more'
 // feedback
 import Popover from './popover'
 import ActionSheet from './actionsheet'
@@ -96,7 +96,7 @@ mui.install = (Vue) => {
         attempt: 1
     })
     Vue.use(Toast)
-
+    Vue.use(Dialog)
     Vue.prototype.swiper = Swiper
 }
 if (typeof window !== 'undefined' && window.Vue) {

@@ -59,12 +59,9 @@ let Dialog = {
         Instance.visible = false
     }
 }
-export {
-    Dialog
+
+export default {
+    install: Vue => {
+        Vue.prototype.$Dialog = Dialog
+    }
 }
-export default Dialog
-// export default {
-//     install: Vue => {
-//         Vue.prototype.Dialog = Dialog
-//     }
-// }
