@@ -48,7 +48,6 @@
 
 <script>
 import back from '@/mixins/back'
-import { Toast } from '@/components'
 export default {
     name: 'field',
     mixins: [back],

@@ -56,7 +56,6 @@
 
 <script>
 import back from '@/mixins/back'
-import {Toast} from '@/components'
 export default {
     name: 'search',
     mixins: [back],
@@ -67,13 +66,13 @@ export default {
     },
     methods: {
         onClear () {
-            Toast({
+            this.$Toast({
                 msg: '清空了',
                 position: 'bottom'
             })
         },
         onCancel (e) {
-            Toast({
+            this.$Toast({
                 msg: '取消了',
                 position: 'bottom'
             })
@@ -84,12 +83,12 @@ export default {
         },
         onSubmit (e) {
             if (this.defaultValue) {
-                Toast({
+                this.$Toast({
                     msg: '搜索中:' + this.defaultValue,
                     position: 'bottom'
                 })
             } else {
-                Toast({
+                this.$Toast({
                     msg: '请输入内容',
                     position: 'bottom'
                 })

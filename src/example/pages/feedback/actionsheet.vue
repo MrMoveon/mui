@@ -42,7 +42,6 @@
 
 <script>
 import back from '@/mixins/back'
-import {Toast} from '@/components'
 export default {
     name: 'actionsheet',
     mixins: [back],
@@ -91,10 +90,10 @@ export default {
             this.visibleShare = !this.visibleShare
         },
         onPress (index) {
-            Toast('点击了' + this.actionsheet[index])
+            this.$Toast('点击了' + this.actionsheet[index])
         },
         onPressShare (index) {
-            Toast('点击了' + this.actionsheetShare[index].name)
+            this.$Toast('点击了' + this.actionsheetShare[index].name)
         }
 
     }
